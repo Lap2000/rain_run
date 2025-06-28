@@ -1,0 +1,15 @@
+{
+  "appName": "Chạy mưa",
+  "home": "Trang chủ",
+  "selectedLocation": "Location（{selectedLocation}）",
+  "@weather": {
+    "sunny": {
+      "title": "Nắng",
+      "description": "Nắng ..."
+    },
+    "rain": {
+      "title": "Mưa",
+      "description": "Mưa ..."
+    }
+  }
+}

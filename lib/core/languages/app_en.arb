@@ -1,0 +1,15 @@
+{
+  "appName": "RainRun",
+  "home": "Home",
+  "selectedLocation": "Location（{selectedLocation}）",
+  "@weather": {
+    "@sunny": {
+      "title": "Sunny",
+      "description": "Sunny ..."
+    },
+    "@rain": {
+      "title": "Rain",
+      "description": "Rain ..."
+    }
+  }
+}
