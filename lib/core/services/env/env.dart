@@ -6,7 +6,9 @@ class AppEnv {
   final String appWebLink = const String.fromEnvironment('APP_WEB_LINK');
   final String appSuffix = const String.fromEnvironment('APP_ID_SUFFIX');
   final String apiEndPoint = const String.fromEnvironment('APP_API_ENDPOINT');
-  final String openWeatherMapApiKey = const String.fromEnvironment('OPENWEATHERMAP_API_KEY');
+  final String openWeatherMapApiKey = const String.fromEnvironment(
+    'OPENWEATHERMAP_API_KEY',
+  );
 
   static final AppEnv instance = AppEnv._();
 }

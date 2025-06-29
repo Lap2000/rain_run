@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../core/core.dart';
 import '../../gen/l10n.dart';
 import '../router/router.dart';
+import 'my_app_view_model.dart';
 
-class MyApp extends StatelessWidget {
+class MyApp extends HookConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final MyAppViewModel myAppViewModel = ref.watch(myAppProvider.notifier);
+
+    useMount(myAppViewModel.onInit);
+
     return MaterialApp.router(
       title: (context.t?.appName).orError,
       routerDelegate: Routers.ins.$router.routerDelegate,

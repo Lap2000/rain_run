@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'dio_interceptor.dart';
+
 final Provider<Dio> dioProvider = Provider<Dio>((ProviderRef<Dio> ref) {
   final Dio dio = Dio(
     BaseOptions(
@@ -12,17 +14,19 @@ final Provider<Dio> dioProvider = Provider<Dio>((ProviderRef<Dio> ref) {
   );
 
   // Add logging interceptor
-  dio.interceptors.add(LogInterceptor(
-    requestBody: true,
-    responseBody: true,
-    // requestHeader: true,
-    responseHeader: false,
-    // error: true,
-    // request: true,
-  ));
+  dio.interceptors.add(
+    LogInterceptor(
+      requestBody: true,
+      responseBody: true,
+      // requestHeader: true,
+      responseHeader: false,
+      // error: true,
+      // request: true,
+    ),
+  );
 
   // Optional: Custom retry / token / error handling interceptor
-  // dio.interceptors.add(CustomInterceptor());
+  dio.interceptors.add(LoggingInterceptor());
 
   return dio;
 });
