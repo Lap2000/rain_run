@@ -31,7 +31,7 @@ class HomeViewModel extends BaseViewModel<HomeState> {
     setState((HomeState state) {
       return state.copyWith(
         pageState: const PageState.failure(error: 'No Connection'),
-        error: NoConnectionFailure(),
+        error: const NoConnectionFailure(),
       );
     });
   }

@@ -4,7 +4,7 @@ import '../../core.dart';
 
 /// Flutter lifecycle hook that calls a function after the component is mounted.
 /// Use useListener if you want to listen to changes in a provider and handle errors.
-void useListener<S extends BaseState>(
+void useFailureStateListener<S extends BaseState>(
     void Function(String) callback, WidgetRef ref, ProviderListenable<S> viewModelProvider) {
   return useEffectOnce(() {
     final ProviderSubscription<S> sub = ref.listenManual<S>(viewModelProvider, (S? prev, S next) {
@@ -15,7 +15,6 @@ void useListener<S extends BaseState>(
         });
       }
     });
-    // ignore: cast_nullable_to_non_nullable
     return sub.close;
   });
 }

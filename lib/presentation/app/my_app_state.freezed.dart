@@ -49,6 +49,8 @@ abstract mixin class $MyAppStateCopyWith<$Res> {
       _$MyAppStateCopyWithImpl;
   @useResult
   $Res call({PageState pageState});
+
+  $PageStateCopyWith<$Res> get pageState;
 }
 
 /// @nodoc
@@ -71,6 +73,16 @@ class _$MyAppStateCopyWithImpl<$Res> implements $MyAppStateCopyWith<$Res> {
           : pageState // ignore: cast_nullable_to_non_nullable
               as PageState,
     ));
+  }
+
+  /// Create a copy of MyAppState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PageStateCopyWith<$Res> get pageState {
+    return $PageStateCopyWith<$Res>(_self.pageState, (value) {
+      return _then(_self.copyWith(pageState: value));
+    });
   }
 }
 
@@ -117,6 +129,9 @@ abstract mixin class _$MyAppStateCopyWith<$Res>
   @override
   @useResult
   $Res call({PageState pageState});
+
+  @override
+  $PageStateCopyWith<$Res> get pageState;
 }
 
 /// @nodoc
@@ -139,6 +154,16 @@ class __$MyAppStateCopyWithImpl<$Res> implements _$MyAppStateCopyWith<$Res> {
           : pageState // ignore: cast_nullable_to_non_nullable
               as PageState,
     ));
+  }
+
+  /// Create a copy of MyAppState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PageStateCopyWith<$Res> get pageState {
+    return $PageStateCopyWith<$Res>(_self.pageState, (value) {
+      return _then(_self.copyWith(pageState: value));
+    });
   }
 }
 

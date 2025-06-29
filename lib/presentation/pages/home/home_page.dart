@@ -13,7 +13,7 @@ class HomePage extends HookConsumerWidget {
     final HomeViewModel homeViewModel = ref.watch(homeProvider.notifier);
     final HomeState homeState = ref.watch(homeProvider);
 
-    useListener<HomeState>((String v) {
+    useFailureStateListener<HomeState>((String v) {
       logger.e('Error: $v');
     }, ref, homeProvider);
 

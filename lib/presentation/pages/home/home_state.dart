@@ -9,13 +9,13 @@ part 'home_state.freezed.dart';
 
 @freezed
 abstract class HomeState with _$HomeState implements BaseState {
-  factory HomeState({
+  const factory HomeState({
     required PageState pageState,
     Failure? error,
     WeatherEntity? weather,
   }) = _HomeState;
 
-  factory HomeState.initial() => HomeState(
-        pageState: const PageState.initial(),
+  factory HomeState.initial() => const HomeState(
+        pageState: PageState.initial(),
       );
 }

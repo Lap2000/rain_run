@@ -1,26 +1,13 @@
-sealed class PageState {
-  const PageState();
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'base_state.freezed.dart';
+
+@freezed
+class PageState with _$PageState {
   const factory PageState.initial() = _Initial;
   const factory PageState.loading() = _Loading;
   const factory PageState.success() = _Success;
   const factory PageState.failure({required String error}) = _Failure;
-}
-
-class _Initial extends PageState {
-  const _Initial();
-}
-
-class _Loading extends PageState {
-  const _Loading();
-}
-
-class _Success extends PageState {
-  const _Success();
-}
-
-class _Failure extends PageState {
-  const _Failure({required this.error});
-  final String error;
 }
 
 extension PageStateExtensions on PageState {

@@ -52,6 +52,9 @@ abstract mixin class $HomeStateCopyWith<$Res> {
       _$HomeStateCopyWithImpl;
   @useResult
   $Res call({PageState pageState, Failure? error, WeatherEntity? weather});
+
+  $PageStateCopyWith<$Res> get pageState;
+  $FailureCopyWith<$Res>? get error;
 }
 
 /// @nodoc
@@ -85,12 +88,36 @@ class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
               as WeatherEntity?,
     ));
   }
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PageStateCopyWith<$Res> get pageState {
+    return $PageStateCopyWith<$Res>(_self.pageState, (value) {
+      return _then(_self.copyWith(pageState: value));
+    });
+  }
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $FailureCopyWith<$Res>? get error {
+    if (_self.error == null) {
+      return null;
+    }
+
+    return $FailureCopyWith<$Res>(_self.error!, (value) {
+      return _then(_self.copyWith(error: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _HomeState implements HomeState {
-  _HomeState({required this.pageState, this.error, this.weather});
+  const _HomeState({required this.pageState, this.error, this.weather});
 
   @override
   final PageState pageState;
@@ -136,6 +163,11 @@ abstract mixin class _$HomeStateCopyWith<$Res>
   @override
   @useResult
   $Res call({PageState pageState, Failure? error, WeatherEntity? weather});
+
+  @override
+  $PageStateCopyWith<$Res> get pageState;
+  @override
+  $FailureCopyWith<$Res>? get error;
 }
 
 /// @nodoc
@@ -168,6 +200,30 @@ class __$HomeStateCopyWithImpl<$Res> implements _$HomeStateCopyWith<$Res> {
           : weather // ignore: cast_nullable_to_non_nullable
               as WeatherEntity?,
     ));
+  }
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PageStateCopyWith<$Res> get pageState {
+    return $PageStateCopyWith<$Res>(_self.pageState, (value) {
+      return _then(_self.copyWith(pageState: value));
+    });
+  }
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $FailureCopyWith<$Res>? get error {
+    if (_self.error == null) {
+      return null;
+    }
+
+    return $FailureCopyWith<$Res>(_self.error!, (value) {
+      return _then(_self.copyWith(error: value));
+    });
   }
 }
 

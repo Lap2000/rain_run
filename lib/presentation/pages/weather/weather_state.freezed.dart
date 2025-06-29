@@ -50,6 +50,8 @@ abstract mixin class $WeatherStateCopyWith<$Res> {
       _$WeatherStateCopyWithImpl;
   @useResult
   $Res call({PageState pageState});
+
+  $PageStateCopyWith<$Res> get pageState;
 }
 
 /// @nodoc
@@ -72,6 +74,16 @@ class _$WeatherStateCopyWithImpl<$Res> implements $WeatherStateCopyWith<$Res> {
           : pageState // ignore: cast_nullable_to_non_nullable
               as PageState,
     ));
+  }
+
+  /// Create a copy of WeatherState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PageStateCopyWith<$Res> get pageState {
+    return $PageStateCopyWith<$Res>(_self.pageState, (value) {
+      return _then(_self.copyWith(pageState: value));
+    });
   }
 }
 
@@ -118,6 +130,9 @@ abstract mixin class _$WeatherStateCopyWith<$Res>
   @override
   @useResult
   $Res call({PageState pageState});
+
+  @override
+  $PageStateCopyWith<$Res> get pageState;
 }
 
 /// @nodoc
@@ -141,6 +156,16 @@ class __$WeatherStateCopyWithImpl<$Res>
           : pageState // ignore: cast_nullable_to_non_nullable
               as PageState,
     ));
+  }
+
+  /// Create a copy of WeatherState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PageStateCopyWith<$Res> get pageState {
+    return $PageStateCopyWith<$Res>(_self.pageState, (value) {
+      return _then(_self.copyWith(pageState: value));
+    });
   }
 }
 

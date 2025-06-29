@@ -28,19 +28,19 @@ class WeatherRemoteDataSourceImpl implements WeatherRemoteDataSource {
         final String message = e.response?.data.toString() ?? 'Unknown error';
 
         if (statusCode >= 400 && statusCode < 500) {
-          return Left<Failure, WeatherResponse>(ClientFailure(message));
+          return Left<Failure, WeatherResponse>(ClientFailure(msg: message));
         } else if (statusCode >= 500) {
-          return Left<Failure, WeatherResponse>(ServerFailure(message));
+          return Left<Failure, WeatherResponse>(ServerFailure(msg: message));
         } else {
-          return Left<Failure, WeatherResponse>(UnknownFailure(message));
+          return Left<Failure, WeatherResponse>(UnknownFailure(msg: message));
         }
       } else {
         // Network error, no response
-        return Left<Failure, WeatherResponse>(NoConnectionFailure());
+        return const Left<Failure, WeatherResponse>(NoConnectionFailure());
       }
     } catch (e) {
       // UnKnow error, no response
-      return Left<Failure, WeatherResponse>(UnknownFailure(e.toString()));
+      return Left<Failure, WeatherResponse>(UnknownFailure(msg: e.toString()));
     }
   }
 }

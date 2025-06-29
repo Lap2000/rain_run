@@ -1,20 +1,14 @@
-abstract class Failure implements Exception {
-  Failure(this.message);
-  final String message;
-}
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class ClientFailure extends Failure {
-  ClientFailure(super.message);
-}
+part 'failure.freezed.dart';
 
-class ServerFailure extends Failure {
-  ServerFailure(super.message);
-}
-
-class NoConnectionFailure extends Failure {
-  NoConnectionFailure() : super('No internet connection');
-}
-
-class UnknownFailure extends Failure {
-  UnknownFailure(super.message);
+@freezed
+abstract class Failure with _$Failure implements Exception {
+  const factory Failure.server({String? msg}) = ServerFailure;
+  const factory Failure.client({String? msg}) = ClientFailure;
+  const factory Failure.network({String? msg}) = NetworkFailure;
+  const factory Failure.cache({String? msg}) = CacheFailure;
+  const factory Failure.noConnection({@Default('No internet connection') String? msg}) =
+      NoConnectionFailure;
+  const factory Failure.unknow({@Default('Unknown error occurred') String? msg}) = UnknownFailure;
 }
