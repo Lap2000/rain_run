@@ -7,19 +7,13 @@
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
-import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart' as _svg;
-import 'package:vector_graphics/vector_graphics.dart' as _vg;
 
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
   /// Directory path: assets/icons/png
   $AssetsIconsPngGen get png => const $AssetsIconsPngGen();
-
-  /// Directory path: assets/icons/svg
-  $AssetsIconsSvgGen get svg => const $AssetsIconsSvgGen();
 }
 
 class $AssetsIconsPngGen {
@@ -152,115 +146,6 @@ class $AssetsIconsPngGen {
   ];
 }
 
-class $AssetsIconsSvgGen {
-  const $AssetsIconsSvgGen();
-
-  /// File path: assets/icons/svg/01d.svg
-  SvgGenImage get a01d => const SvgGenImage('assets/icons/svg/01d.svg');
-
-  /// File path: assets/icons/svg/01n.svg
-  SvgGenImage get a01n => const SvgGenImage('assets/icons/svg/01n.svg');
-
-  /// File path: assets/icons/svg/02d.svg
-  SvgGenImage get a02d => const SvgGenImage('assets/icons/svg/02d.svg');
-
-  /// File path: assets/icons/svg/02n.svg
-  SvgGenImage get a02n => const SvgGenImage('assets/icons/svg/02n.svg');
-
-  /// File path: assets/icons/svg/03d.svg
-  SvgGenImage get a03d => const SvgGenImage('assets/icons/svg/03d.svg');
-
-  /// File path: assets/icons/svg/03n.svg
-  SvgGenImage get a03n => const SvgGenImage('assets/icons/svg/03n.svg');
-
-  /// File path: assets/icons/svg/04d.svg
-  SvgGenImage get a04d => const SvgGenImage('assets/icons/svg/04d.svg');
-
-  /// File path: assets/icons/svg/04n.svg
-  SvgGenImage get a04n => const SvgGenImage('assets/icons/svg/04n.svg');
-
-  /// File path: assets/icons/svg/05d.svg
-  SvgGenImage get a05d => const SvgGenImage('assets/icons/svg/05d.svg');
-
-  /// File path: assets/icons/svg/05n.svg
-  SvgGenImage get a05n => const SvgGenImage('assets/icons/svg/05n.svg');
-
-  /// File path: assets/icons/svg/10d_500.svg
-  SvgGenImage get a10d500 => const SvgGenImage('assets/icons/svg/10d_500.svg');
-
-  /// File path: assets/icons/svg/10d_501.svg
-  SvgGenImage get a10d501 => const SvgGenImage('assets/icons/svg/10d_501.svg');
-
-  /// File path: assets/icons/svg/10d_502.svg
-  SvgGenImage get a10d502 => const SvgGenImage('assets/icons/svg/10d_502.svg');
-
-  /// File path: assets/icons/svg/10n_500.svg
-  SvgGenImage get a10n500 => const SvgGenImage('assets/icons/svg/10n_500.svg');
-
-  /// File path: assets/icons/svg/10n_501.svg
-  SvgGenImage get a10n501 => const SvgGenImage('assets/icons/svg/10n_501.svg');
-
-  /// File path: assets/icons/svg/10n_502.svg
-  SvgGenImage get a10n502 => const SvgGenImage('assets/icons/svg/10n_502.svg');
-
-  /// File path: assets/icons/svg/11d.svg
-  SvgGenImage get a11d => const SvgGenImage('assets/icons/svg/11d.svg');
-
-  /// File path: assets/icons/svg/11n.svg
-  SvgGenImage get a11n => const SvgGenImage('assets/icons/svg/11n.svg');
-
-  /// File path: assets/icons/svg/13d.svg
-  SvgGenImage get a13d => const SvgGenImage('assets/icons/svg/13d.svg');
-
-  /// File path: assets/icons/svg/13d_511.svg
-  SvgGenImage get a13d511 => const SvgGenImage('assets/icons/svg/13d_511.svg');
-
-  /// File path: assets/icons/svg/13n.svg
-  SvgGenImage get a13n => const SvgGenImage('assets/icons/svg/13n.svg');
-
-  /// File path: assets/icons/svg/13n_511.svg
-  SvgGenImage get a13n511 => const SvgGenImage('assets/icons/svg/13n_511.svg');
-
-  /// File path: assets/icons/svg/50d.svg
-  SvgGenImage get a50d => const SvgGenImage('assets/icons/svg/50d.svg');
-
-  /// File path: assets/icons/svg/50n.svg
-  SvgGenImage get a50n => const SvgGenImage('assets/icons/svg/50n.svg');
-
-  /// File path: assets/icons/svg/unknow_weather.svg
-  SvgGenImage get unknowWeather =>
-      const SvgGenImage('assets/icons/svg/unknow_weather.svg');
-
-  /// List of all assets
-  List<SvgGenImage> get values => [
-    a01d,
-    a01n,
-    a02d,
-    a02n,
-    a03d,
-    a03n,
-    a04d,
-    a04n,
-    a05d,
-    a05n,
-    a10d500,
-    a10d501,
-    a10d502,
-    a10n500,
-    a10n501,
-    a10n502,
-    a11d,
-    a11n,
-    a13d,
-    a13d511,
-    a13n,
-    a13n511,
-    a50d,
-    a50n,
-    unknowWeather,
-  ];
-}
-
 class Assets {
   const Assets._();
 
@@ -330,78 +215,6 @@ class AssetGenImage {
 
   ImageProvider provider({AssetBundle? bundle, String? package}) {
     return AssetImage(_assetName, bundle: bundle, package: package);
-  }
-
-  String get path => _assetName;
-
-  String get keyName => _assetName;
-}
-
-class SvgGenImage {
-  const SvgGenImage(this._assetName, {this.size, this.flavors = const {}})
-    : _isVecFormat = false;
-
-  const SvgGenImage.vec(this._assetName, {this.size, this.flavors = const {}})
-    : _isVecFormat = true;
-
-  final String _assetName;
-  final Size? size;
-  final Set<String> flavors;
-  final bool _isVecFormat;
-
-  _svg.SvgPicture svg({
-    Key? key,
-    bool matchTextDirection = false,
-    AssetBundle? bundle,
-    String? package,
-    double? width,
-    double? height,
-    BoxFit fit = BoxFit.contain,
-    AlignmentGeometry alignment = Alignment.center,
-    bool allowDrawingOutsideViewBox = false,
-    WidgetBuilder? placeholderBuilder,
-    String? semanticsLabel,
-    bool excludeFromSemantics = false,
-    _svg.SvgTheme? theme,
-    ColorFilter? colorFilter,
-    Clip clipBehavior = Clip.hardEdge,
-    @deprecated Color? color,
-    @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
-    @deprecated bool cacheColorFilter = false,
-  }) {
-    final _svg.BytesLoader loader;
-    if (_isVecFormat) {
-      loader = _vg.AssetBytesLoader(
-        _assetName,
-        assetBundle: bundle,
-        packageName: package,
-      );
-    } else {
-      loader = _svg.SvgAssetLoader(
-        _assetName,
-        assetBundle: bundle,
-        packageName: package,
-        theme: theme,
-      );
-    }
-    return _svg.SvgPicture(
-      loader,
-      key: key,
-      matchTextDirection: matchTextDirection,
-      width: width,
-      height: height,
-      fit: fit,
-      alignment: alignment,
-      allowDrawingOutsideViewBox: allowDrawingOutsideViewBox,
-      placeholderBuilder: placeholderBuilder,
-      semanticsLabel: semanticsLabel,
-      excludeFromSemantics: excludeFromSemantics,
-      colorFilter:
-          colorFilter ??
-          (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
-      clipBehavior: clipBehavior,
-      cacheColorFilter: cacheColorFilter,
-    );
   }
 
   String get path => _assetName;
