@@ -8,8 +8,8 @@ class GetWeatherUsecase {
   GetWeatherUsecase(this.repository);
   final WeatherRepository repository;
 
-  Future<Either<Failure, WeatherEntity>> call(double lat, double lon) async {
+  Future<Either<Failure, WeatherEntity>> call(double lat, double lon, String languageCode) async {
     // TODO(lappd): handle business logic
-    return repository.fetchOpenWeather(lat, lon);
+    return repository.fetchOpenWeather(lat, lon, languageCode);
   }
 }

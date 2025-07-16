@@ -18,4 +18,19 @@ class AppTextEn extends AppText {
   String selectedLocation(Object selectedLocation) {
     return 'Location（$selectedLocation）';
   }
+
+  @override
+  String get addLocation => 'Add location';
+
+  @override
+  String get yourLocation => 'Your location';
+
+  @override
+  String get unknown => 'Unknown';
+
+  @override
+  String get now => 'Now';
+
+  @override
+  String get forecasts8day => '8-Days Forecasts';
 }

@@ -2,11 +2,15 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 import '../../../core/core.dart';
-import '../../models/weather/weather_model.dart';
+import '../../dto/weather/weather_dto.dart';
 import '../network/api_client.dart';
 
 abstract class WeatherRemoteDataSource {
-  Future<Either<Failure, WeatherResponse>> fetchOpenWeather(double lat, double lon);
+  Future<Either<Failure, WeatherDTO>> fetchOpenWeather(
+    double lat,
+    double lon,
+    String languageCode,
+  );
 }
 
 class WeatherRemoteDataSourceImpl implements WeatherRemoteDataSource {
@@ -14,33 +18,38 @@ class WeatherRemoteDataSourceImpl implements WeatherRemoteDataSource {
   final ApiClient apiClient;
 
   @override
-  Future<Either<Failure, WeatherResponse>> fetchOpenWeather(double lat, double lon) async {
+  Future<Either<Failure, WeatherDTO>> fetchOpenWeather(
+    double lat,
+    double lon,
+    String languageCode,
+  ) async {
     try {
-      final WeatherResponse response = await apiClient.getOneCallWeather(
+      final WeatherDTO response = await apiClient.getOneCallWeather(
         lat: lat,
         lon: lon,
         apiKey: AppEnv.instance.openWeatherMapApiKey,
+        lang: languageCode,
       );
-      return Right<Failure, WeatherResponse>(response);
+      return Right<Failure, WeatherDTO>(response);
     } on DioException catch (e) {
       if (e.response != null) {
         final int statusCode = e.response?.statusCode ?? 0;
         final String message = e.response?.data.toString() ?? 'Unknown error';
 
         if (statusCode >= 400 && statusCode < 500) {
-          return Left<Failure, WeatherResponse>(ClientFailure(msg: message));
+          return Left<Failure, WeatherDTO>(ClientFailure(msg: message));
         } else if (statusCode >= 500) {
-          return Left<Failure, WeatherResponse>(ServerFailure(msg: message));
+          return Left<Failure, WeatherDTO>(ServerFailure(msg: message));
         } else {
-          return Left<Failure, WeatherResponse>(UnknownFailure(msg: message));
+          return Left<Failure, WeatherDTO>(UnknownFailure(msg: message));
         }
       } else {
         // Network error, no response
-        return const Left<Failure, WeatherResponse>(NoConnectionFailure());
+        return const Left<Failure, WeatherDTO>(NoConnectionFailure());
       }
     } catch (e) {
       // UnKnow error, no response
-      return Left<Failure, WeatherResponse>(UnknownFailure(msg: e.toString()));
+      return Left<Failure, WeatherDTO>(UnknownFailure(msg: e.toString()));
     }
   }
 }

@@ -20,12 +20,13 @@ class _ApiClient implements ApiClient {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<WeatherResponse> getOneCallWeather({
+  Future<WeatherDTO> getOneCallWeather({
     required double lat,
     required double lon,
     required String apiKey,
     String exclude = 'minutely,alerts',
     String units = 'metric',
+    required String lang,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
@@ -34,10 +35,11 @@ class _ApiClient implements ApiClient {
       r'appid': apiKey,
       r'exclude': exclude,
       r'units': units,
+      r'lang': lang,
     };
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<WeatherResponse>(
+    final _options = _setStreamType<WeatherDTO>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -48,9 +50,9 @@ class _ApiClient implements ApiClient {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late WeatherResponse _value;
+    late WeatherDTO _value;
     try {
-      _value = WeatherResponse.fromJson(_result.data!);
+      _value = WeatherDTO.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

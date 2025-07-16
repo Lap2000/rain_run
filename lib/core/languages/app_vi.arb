@@ -11,5 +11,10 @@
       "title": "Mưa",
       "description": "Mưa ..."
     }
-  }
+  },
+  "addLocation": "Thêm vị trí",
+  "yourLocation": "Vị trí của bạn",
+  "unknown": "Không xác định",
+  "now": "Bây giờ",
+  "forecasts8day": "Dự báo 8 ngày tới."
 }

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/core.dart';
+import '../models/weather_model.dart';
 import '../pages/home/home_page.dart';
 import '../pages/weather/weather_page.dart';
 import 'router_path.dart';
@@ -45,6 +46,11 @@ class HomeRouter extends GoRouteData with _$HomeRouter {
 }
 
 class WeatherRouter extends GoRouteData with _$WeatherRouter {
+  WeatherRouter({required this.$extra});
+
+  final WeatherModel? $extra;
   @override
-  Widget build(BuildContext context, GoRouterState state) => const WeatherPage();
+  Widget build(BuildContext context, GoRouterState state) => WeatherPage(
+        weather: $extra ?? const WeatherModel(),
+      );
 }

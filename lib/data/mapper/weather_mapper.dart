@@ -1,27 +1,26 @@
+import '../../core/core.dart';
 import '../../domain/entities/weather/weather_entity.dart';
-import '../models/weather/weather_model.dart';
-
-double? _kToC(dynamic k) => (k is num) ? (k - 273.15) : null;
+import '../dto/weather/weather_dto.dart';
 
 DateTime? _toDateTime(int? timestamp) =>
     timestamp != null ? DateTime.fromMillisecondsSinceEpoch(timestamp * 1000, isUtc: true) : null;
 
-extension WeatherResponseExtension on WeatherResponse {
+extension WeatherResponseExtension on WeatherDTO {
   WeatherEntity toEntity() {
     return WeatherEntity(
       lat: lat,
       lon: lon,
       timezone: timezone,
       current: current?.toEntity(),
-      hourly: hourly?.map((HourlyWeather e) => e.toEntity()).toList(),
-      daily: daily?.map((DailyWeather e) => e.toEntity()).toList(),
+      hourly: hourly?.map((HourlyWeatherDTO e) => e.toEntity()).toList(),
+      daily: daily?.map((DailyWeatherDTO e) => e.toEntity()).toList(),
     );
   }
 }
 
-extension CurrentWeatherExtension on CurrentWeather {
+extension CurrentWeatherExtension on CurrentWeatherDTO {
   CurrentWeatherEntity toEntity() {
-    final WeatherCondition? weatherFirst =
+    final WeatherConditionDTO? weatherFirst =
         weather != null && weather!.isNotEmpty ? weather!.first : null;
 
     return CurrentWeatherEntity(
@@ -31,11 +30,11 @@ extension CurrentWeatherExtension on CurrentWeather {
           : null,
       sunset:
           sunset != null ? DateTime.fromMillisecondsSinceEpoch(sunset! * 1000, isUtc: true) : null,
-      tempCelsius: _kToC(temp),
-      feelsLikeCelsius: _kToC(feelsLike),
+      tempCelsius: temp?.round(),
+      feelsLikeCelsius: feelsLike?.round(),
       pressure: pressure,
       humidity: humidity?.toDouble(),
-      dewPointCelsius: _kToC(dewPoint),
+      dewPointCelsius: dewPoint,
       uvi: uvi,
       clouds: clouds,
       visibility: visibility,
@@ -43,22 +42,23 @@ extension CurrentWeatherExtension on CurrentWeather {
       windDeg: windDeg,
       windGust: windGust,
       weather: weatherFirst?.toEntity(),
+      rain: rain?.toEntity(),
     );
   }
 }
 
-extension HourlyWeatherExtension on HourlyWeather {
+extension HourlyWeatherExtension on HourlyWeatherDTO {
   HourlyWeatherEntity toEntity() {
-    final WeatherCondition? weatherFirst =
+    final WeatherConditionDTO? weatherFirst =
         weather != null && weather!.isNotEmpty ? weather!.first : null;
 
     return HourlyWeatherEntity(
       dateTime: _toDateTime(dt),
-      tempCelsius: _kToC(temp),
-      feelsLikeCelsius: _kToC(feelsLike),
+      tempCelsius: temp?.round(),
+      feelsLikeCelsius: feelsLike?.round(),
       pressure: pressure,
       humidity: humidity?.toDouble(),
-      dewPointCelsius: _kToC(dewPoint),
+      dewPointCelsius: dewPoint,
       uvi: uvi,
       clouds: clouds,
       visibility: visibility,
@@ -67,13 +67,14 @@ extension HourlyWeatherExtension on HourlyWeather {
       windGust: windGust,
       weather: weatherFirst?.toEntity(),
       pop: pop,
+      rain: rain?.toEntity(),
     );
   }
 }
 
-extension DailyWeatherExtension on DailyWeather {
+extension DailyWeatherExtension on DailyWeatherDTO {
   DailyWeatherEntity toEntity() {
-    final WeatherCondition? weatherFirst =
+    final WeatherConditionDTO? weatherFirst =
         weather != null && weather!.isNotEmpty ? weather!.first : null;
 
     return DailyWeatherEntity(
@@ -88,7 +89,7 @@ extension DailyWeatherExtension on DailyWeather {
       feelsLike: feelsLike?.toEntity(),
       pressure: pressure,
       humidity: humidity?.toDouble(),
-      dewPoint: _kToC(dewPoint),
+      dewPoint: dewPoint,
       windSpeed: windSpeed,
       windDeg: windDeg,
       windGust: windGust,
@@ -96,22 +97,23 @@ extension DailyWeatherExtension on DailyWeather {
       clouds: clouds,
       pop: pop,
       uvi: uvi,
+      rain: rain,
     );
   }
 }
 
-extension WeatherConditionExtension on WeatherCondition {
+extension WeatherConditionExtension on WeatherConditionDTO {
   WeatherConditionEntity toEntity() {
     return WeatherConditionEntity(
       id: id,
       main: main,
-      description: description,
+      description: description.capitalizeFirstLetter,
       icon: icon,
     );
   }
 }
 
-extension TempExtension on Temperature {
+extension TempExtension on TemperatureDTO {
   TempEntity toEntity() {
     return TempEntity(
       day: day,
@@ -124,13 +126,21 @@ extension TempExtension on Temperature {
   }
 }
 
-extension FeelsLikeExtension on FeelsLike {
+extension FeelsLikeExtension on FeelsLikeDTO {
   FeelsLikeEntity toEntity() {
     return FeelsLikeEntity(
       day: day,
       night: night,
       eve: eve,
       morn: morn,
+    );
+  }
+}
+
+extension Rain1HExtension on Rain1HDTO {
+  Rain1hEntity toEntity() {
+    return Rain1hEntity(
+      rain1h: anHour,
     );
   }
 }

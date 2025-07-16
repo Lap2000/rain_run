@@ -11,5 +11,10 @@
       "title": "Rain",
       "description": "Rain ..."
     }
-  }
+  },
+  "addLocation": "Add location",
+  "yourLocation": "Your location",
+  "unknown": "Unknown",
+  "now": "Now",
+  "forecasts8day": "8-Days Forecasts"
 }

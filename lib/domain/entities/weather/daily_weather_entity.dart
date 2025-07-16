@@ -28,6 +28,7 @@ class DailyWeatherEntity extends Equatable {
     this.clouds,
     this.pop,
     this.uvi,
+    this.rain,
   });
 
   final DateTime? dateTime;
@@ -43,7 +44,7 @@ class DailyWeatherEntity extends Equatable {
 
   final int? pressure;
   final double? humidity;
-  final double? dewPoint;
+  final int? dewPoint;
   final double? windSpeed;
   final int? windDeg;
   final double? windGust;
@@ -53,6 +54,8 @@ class DailyWeatherEntity extends Equatable {
   final int? clouds;
   final double? pop;
   final double? uvi;
+
+  final double? rain;
 
   @override
   List<Object?> get props => <Object?>[
@@ -75,5 +78,6 @@ class DailyWeatherEntity extends Equatable {
         clouds,
         pop,
         uvi,
+        rain,
       ];
 }

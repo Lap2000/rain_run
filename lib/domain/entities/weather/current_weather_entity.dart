@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+import 'rain_entity.dart';
 import 'weather_condition_entity.dart';
 
 class CurrentWeatherEntity extends Equatable {
@@ -19,16 +20,17 @@ class CurrentWeatherEntity extends Equatable {
     this.windDeg,
     this.windGust,
     this.weather,
+    this.rain,
   });
 
   final DateTime? dateTime;
   final DateTime? sunrise;
   final DateTime? sunset;
-  final double? tempCelsius;
-  final double? feelsLikeCelsius;
+  final int? tempCelsius;
+  final int? feelsLikeCelsius;
   final int? pressure;
   final double? humidity;
-  final double? dewPointCelsius;
+  final int? dewPointCelsius;
   final double? uvi;
   final int? clouds;
   final int? visibility;
@@ -37,6 +39,8 @@ class CurrentWeatherEntity extends Equatable {
   final double? windGust;
 
   final WeatherConditionEntity? weather;
+
+  final Rain1hEntity? rain;
 
   @override
   List<Object?> get props => <Object?>[
@@ -55,5 +59,6 @@ class CurrentWeatherEntity extends Equatable {
         windDeg,
         windGust,
         weather,
+        rain,
       ];
 }

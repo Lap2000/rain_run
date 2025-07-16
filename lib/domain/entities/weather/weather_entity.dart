@@ -8,6 +8,7 @@ export 'current_weather_entity.dart';
 export 'daily_weather_entity.dart';
 export 'feels_like_entity.dart';
 export 'hourly_weather_entity.dart';
+export 'rain_entity.dart';
 export 'temp_entity.dart';
 export 'weather_condition_entity.dart';
 

@@ -17,7 +17,7 @@ T _$identity<T>(T value) => value;
 mixin _$HomeState {
   PageState get pageState;
   Failure? get error;
-  WeatherEntity? get weather;
+  WeatherModel? get weather;
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -51,7 +51,7 @@ abstract mixin class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) _then) =
       _$HomeStateCopyWithImpl;
   @useResult
-  $Res call({PageState pageState, Failure? error, WeatherEntity? weather});
+  $Res call({PageState pageState, Failure? error, WeatherModel? weather});
 
   $PageStateCopyWith<$Res> get pageState;
   $FailureCopyWith<$Res>? get error;
@@ -85,7 +85,7 @@ class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
       weather: freezed == weather
           ? _self.weather
           : weather // ignore: cast_nullable_to_non_nullable
-              as WeatherEntity?,
+              as WeatherModel?,
     ));
   }
 
@@ -124,7 +124,7 @@ class _HomeState implements HomeState {
   @override
   final Failure? error;
   @override
-  final WeatherEntity? weather;
+  final WeatherModel? weather;
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -162,7 +162,7 @@ abstract mixin class _$HomeStateCopyWith<$Res>
       __$HomeStateCopyWithImpl;
   @override
   @useResult
-  $Res call({PageState pageState, Failure? error, WeatherEntity? weather});
+  $Res call({PageState pageState, Failure? error, WeatherModel? weather});
 
   @override
   $PageStateCopyWith<$Res> get pageState;
@@ -198,7 +198,7 @@ class __$HomeStateCopyWithImpl<$Res> implements _$HomeStateCopyWith<$Res> {
       weather: freezed == weather
           ? _self.weather
           : weather // ignore: cast_nullable_to_non_nullable
-              as WeatherEntity?,
+              as WeatherModel?,
     ));
   }
 

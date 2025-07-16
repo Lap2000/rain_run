@@ -110,6 +110,36 @@ abstract class AppText {
   /// In en, this message translates to:
   /// **'Location（{selectedLocation}）'**
   String selectedLocation(Object selectedLocation);
+
+  /// No description provided for @addLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Add location'**
+  String get addLocation;
+
+  /// No description provided for @yourLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Your location'**
+  String get yourLocation;
+
+  /// No description provided for @unknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown'**
+  String get unknown;
+
+  /// No description provided for @now.
+  ///
+  /// In en, this message translates to:
+  /// **'Now'**
+  String get now;
+
+  /// No description provided for @forecasts8day.
+  ///
+  /// In en, this message translates to:
+  /// **'8-Days Forecasts'**
+  String get forecasts8day;
 }
 
 class _AppTextDelegate extends LocalizationsDelegate<AppText> {

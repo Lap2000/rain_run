@@ -18,4 +18,19 @@ class AppTextVi extends AppText {
   String selectedLocation(Object selectedLocation) {
     return 'Location（$selectedLocation）';
   }
+
+  @override
+  String get addLocation => 'Thêm vị trí';
+
+  @override
+  String get yourLocation => 'Vị trí của bạn';
+
+  @override
+  String get unknown => 'Không xác định';
+
+  @override
+  String get now => 'Bây giờ';
+
+  @override
+  String get forecasts8day => 'Dự báo 8 ngày tới.';
 }

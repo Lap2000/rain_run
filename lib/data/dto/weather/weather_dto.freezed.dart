@@ -4,7 +4,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'weather_model.dart';
+part of 'weather_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,31 +14,30 @@ part of 'weather_model.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$WeatherResponse {
+mixin _$WeatherDTO {
   double? get lat;
   double? get lon;
   String? get timezone;
   int? get timezoneOffset;
-  CurrentWeather? get current;
-  List<HourlyWeather>? get hourly;
-  List<DailyWeather>? get daily;
+  CurrentWeatherDTO? get current;
+  List<HourlyWeatherDTO>? get hourly;
+  List<DailyWeatherDTO>? get daily;
 
-  /// Create a copy of WeatherResponse
+  /// Create a copy of WeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $WeatherResponseCopyWith<WeatherResponse> get copyWith =>
-      _$WeatherResponseCopyWithImpl<WeatherResponse>(
-          this as WeatherResponse, _$identity);
+  $WeatherDTOCopyWith<WeatherDTO> get copyWith =>
+      _$WeatherDTOCopyWithImpl<WeatherDTO>(this as WeatherDTO, _$identity);
 
-  /// Serializes this WeatherResponse to a JSON map.
+  /// Serializes this WeatherDTO to a JSON map.
   Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is WeatherResponse &&
+            other is WeatherDTO &&
             (identical(other.lat, lat) || other.lat == lat) &&
             (identical(other.lon, lon) || other.lon == lon) &&
             (identical(other.timezone, timezone) ||
@@ -64,37 +63,36 @@ mixin _$WeatherResponse {
 
   @override
   String toString() {
-    return 'WeatherResponse(lat: $lat, lon: $lon, timezone: $timezone, timezoneOffset: $timezoneOffset, current: $current, hourly: $hourly, daily: $daily)';
+    return 'WeatherDTO(lat: $lat, lon: $lon, timezone: $timezone, timezoneOffset: $timezoneOffset, current: $current, hourly: $hourly, daily: $daily)';
   }
 }
 
 /// @nodoc
-abstract mixin class $WeatherResponseCopyWith<$Res> {
-  factory $WeatherResponseCopyWith(
-          WeatherResponse value, $Res Function(WeatherResponse) _then) =
-      _$WeatherResponseCopyWithImpl;
+abstract mixin class $WeatherDTOCopyWith<$Res> {
+  factory $WeatherDTOCopyWith(
+          WeatherDTO value, $Res Function(WeatherDTO) _then) =
+      _$WeatherDTOCopyWithImpl;
   @useResult
   $Res call(
       {double? lat,
       double? lon,
       String? timezone,
       int? timezoneOffset,
-      CurrentWeather? current,
-      List<HourlyWeather>? hourly,
-      List<DailyWeather>? daily});
+      CurrentWeatherDTO? current,
+      List<HourlyWeatherDTO>? hourly,
+      List<DailyWeatherDTO>? daily});
 
-  $CurrentWeatherCopyWith<$Res>? get current;
+  $CurrentWeatherDTOCopyWith<$Res>? get current;
 }
 
 /// @nodoc
-class _$WeatherResponseCopyWithImpl<$Res>
-    implements $WeatherResponseCopyWith<$Res> {
-  _$WeatherResponseCopyWithImpl(this._self, this._then);
+class _$WeatherDTOCopyWithImpl<$Res> implements $WeatherDTOCopyWith<$Res> {
+  _$WeatherDTOCopyWithImpl(this._self, this._then);
 
-  final WeatherResponse _self;
-  final $Res Function(WeatherResponse) _then;
+  final WeatherDTO _self;
+  final $Res Function(WeatherDTO) _then;
 
-  /// Create a copy of WeatherResponse
+  /// Create a copy of WeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -127,28 +125,28 @@ class _$WeatherResponseCopyWithImpl<$Res>
       current: freezed == current
           ? _self.current
           : current // ignore: cast_nullable_to_non_nullable
-              as CurrentWeather?,
+              as CurrentWeatherDTO?,
       hourly: freezed == hourly
           ? _self.hourly
           : hourly // ignore: cast_nullable_to_non_nullable
-              as List<HourlyWeather>?,
+              as List<HourlyWeatherDTO>?,
       daily: freezed == daily
           ? _self.daily
           : daily // ignore: cast_nullable_to_non_nullable
-              as List<DailyWeather>?,
+              as List<DailyWeatherDTO>?,
     ));
   }
 
-  /// Create a copy of WeatherResponse
+  /// Create a copy of WeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $CurrentWeatherCopyWith<$Res>? get current {
+  $CurrentWeatherDTOCopyWith<$Res>? get current {
     if (_self.current == null) {
       return null;
     }
 
-    return $CurrentWeatherCopyWith<$Res>(_self.current!, (value) {
+    return $CurrentWeatherDTOCopyWith<$Res>(_self.current!, (value) {
       return _then(_self.copyWith(current: value));
     });
   }
@@ -156,19 +154,19 @@ class _$WeatherResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _WeatherResponse implements WeatherResponse {
-  const _WeatherResponse(
+class _WeatherDTO implements WeatherDTO {
+  const _WeatherDTO(
       {this.lat,
       this.lon,
       this.timezone,
       this.timezoneOffset,
       this.current,
-      final List<HourlyWeather>? hourly,
-      final List<DailyWeather>? daily})
+      final List<HourlyWeatherDTO>? hourly,
+      final List<DailyWeatherDTO>? daily})
       : _hourly = hourly,
         _daily = daily;
-  factory _WeatherResponse.fromJson(Map<String, dynamic> json) =>
-      _$WeatherResponseFromJson(json);
+  factory _WeatherDTO.fromJson(Map<String, dynamic> json) =>
+      _$WeatherDTOFromJson(json);
 
   @override
   final double? lat;
@@ -179,10 +177,10 @@ class _WeatherResponse implements WeatherResponse {
   @override
   final int? timezoneOffset;
   @override
-  final CurrentWeather? current;
-  final List<HourlyWeather>? _hourly;
+  final CurrentWeatherDTO? current;
+  final List<HourlyWeatherDTO>? _hourly;
   @override
-  List<HourlyWeather>? get hourly {
+  List<HourlyWeatherDTO>? get hourly {
     final value = _hourly;
     if (value == null) return null;
     if (_hourly is EqualUnmodifiableListView) return _hourly;
@@ -190,9 +188,9 @@ class _WeatherResponse implements WeatherResponse {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<DailyWeather>? _daily;
+  final List<DailyWeatherDTO>? _daily;
   @override
-  List<DailyWeather>? get daily {
+  List<DailyWeatherDTO>? get daily {
     final value = _daily;
     if (value == null) return null;
     if (_daily is EqualUnmodifiableListView) return _daily;
@@ -200,17 +198,17 @@ class _WeatherResponse implements WeatherResponse {
     return EqualUnmodifiableListView(value);
   }
 
-  /// Create a copy of WeatherResponse
+  /// Create a copy of WeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$WeatherResponseCopyWith<_WeatherResponse> get copyWith =>
-      __$WeatherResponseCopyWithImpl<_WeatherResponse>(this, _$identity);
+  _$WeatherDTOCopyWith<_WeatherDTO> get copyWith =>
+      __$WeatherDTOCopyWithImpl<_WeatherDTO>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$WeatherResponseToJson(
+    return _$WeatherDTOToJson(
       this,
     );
   }
@@ -219,7 +217,7 @@ class _WeatherResponse implements WeatherResponse {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _WeatherResponse &&
+            other is _WeatherDTO &&
             (identical(other.lat, lat) || other.lat == lat) &&
             (identical(other.lon, lon) || other.lon == lon) &&
             (identical(other.timezone, timezone) ||
@@ -245,16 +243,16 @@ class _WeatherResponse implements WeatherResponse {
 
   @override
   String toString() {
-    return 'WeatherResponse(lat: $lat, lon: $lon, timezone: $timezone, timezoneOffset: $timezoneOffset, current: $current, hourly: $hourly, daily: $daily)';
+    return 'WeatherDTO(lat: $lat, lon: $lon, timezone: $timezone, timezoneOffset: $timezoneOffset, current: $current, hourly: $hourly, daily: $daily)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$WeatherResponseCopyWith<$Res>
-    implements $WeatherResponseCopyWith<$Res> {
-  factory _$WeatherResponseCopyWith(
-          _WeatherResponse value, $Res Function(_WeatherResponse) _then) =
-      __$WeatherResponseCopyWithImpl;
+abstract mixin class _$WeatherDTOCopyWith<$Res>
+    implements $WeatherDTOCopyWith<$Res> {
+  factory _$WeatherDTOCopyWith(
+          _WeatherDTO value, $Res Function(_WeatherDTO) _then) =
+      __$WeatherDTOCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -262,23 +260,22 @@ abstract mixin class _$WeatherResponseCopyWith<$Res>
       double? lon,
       String? timezone,
       int? timezoneOffset,
-      CurrentWeather? current,
-      List<HourlyWeather>? hourly,
-      List<DailyWeather>? daily});
+      CurrentWeatherDTO? current,
+      List<HourlyWeatherDTO>? hourly,
+      List<DailyWeatherDTO>? daily});
 
   @override
-  $CurrentWeatherCopyWith<$Res>? get current;
+  $CurrentWeatherDTOCopyWith<$Res>? get current;
 }
 
 /// @nodoc
-class __$WeatherResponseCopyWithImpl<$Res>
-    implements _$WeatherResponseCopyWith<$Res> {
-  __$WeatherResponseCopyWithImpl(this._self, this._then);
+class __$WeatherDTOCopyWithImpl<$Res> implements _$WeatherDTOCopyWith<$Res> {
+  __$WeatherDTOCopyWithImpl(this._self, this._then);
 
-  final _WeatherResponse _self;
-  final $Res Function(_WeatherResponse) _then;
+  final _WeatherDTO _self;
+  final $Res Function(_WeatherDTO) _then;
 
-  /// Create a copy of WeatherResponse
+  /// Create a copy of WeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -291,7 +288,7 @@ class __$WeatherResponseCopyWithImpl<$Res>
     Object? hourly = freezed,
     Object? daily = freezed,
   }) {
-    return _then(_WeatherResponse(
+    return _then(_WeatherDTO(
       lat: freezed == lat
           ? _self.lat
           : lat // ignore: cast_nullable_to_non_nullable
@@ -311,35 +308,35 @@ class __$WeatherResponseCopyWithImpl<$Res>
       current: freezed == current
           ? _self.current
           : current // ignore: cast_nullable_to_non_nullable
-              as CurrentWeather?,
+              as CurrentWeatherDTO?,
       hourly: freezed == hourly
           ? _self._hourly
           : hourly // ignore: cast_nullable_to_non_nullable
-              as List<HourlyWeather>?,
+              as List<HourlyWeatherDTO>?,
       daily: freezed == daily
           ? _self._daily
           : daily // ignore: cast_nullable_to_non_nullable
-              as List<DailyWeather>?,
+              as List<DailyWeatherDTO>?,
     ));
   }
 
-  /// Create a copy of WeatherResponse
+  /// Create a copy of WeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $CurrentWeatherCopyWith<$Res>? get current {
+  $CurrentWeatherDTOCopyWith<$Res>? get current {
     if (_self.current == null) {
       return null;
     }
 
-    return $CurrentWeatherCopyWith<$Res>(_self.current!, (value) {
+    return $CurrentWeatherDTOCopyWith<$Res>(_self.current!, (value) {
       return _then(_self.copyWith(current: value));
     });
   }
 }
 
 /// @nodoc
-mixin _$CurrentWeather {
+mixin _$CurrentWeatherDTO {
   int? get dt;
   int? get sunrise;
   int? get sunset;
@@ -349,7 +346,7 @@ mixin _$CurrentWeather {
   int? get pressure;
   int? get humidity;
   @JsonKey(name: 'dew_point')
-  double? get dewPoint;
+  int? get dewPoint;
   double? get uvi;
   int? get clouds;
   int? get visibility;
@@ -359,24 +356,25 @@ mixin _$CurrentWeather {
   int? get windDeg;
   @JsonKey(name: 'wind_gust')
   double? get windGust;
-  List<WeatherCondition>? get weather;
+  List<WeatherConditionDTO>? get weather;
+  Rain1HDTO? get rain;
 
-  /// Create a copy of CurrentWeather
+  /// Create a copy of CurrentWeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $CurrentWeatherCopyWith<CurrentWeather> get copyWith =>
-      _$CurrentWeatherCopyWithImpl<CurrentWeather>(
-          this as CurrentWeather, _$identity);
+  $CurrentWeatherDTOCopyWith<CurrentWeatherDTO> get copyWith =>
+      _$CurrentWeatherDTOCopyWithImpl<CurrentWeatherDTO>(
+          this as CurrentWeatherDTO, _$identity);
 
-  /// Serializes this CurrentWeather to a JSON map.
+  /// Serializes this CurrentWeatherDTO to a JSON map.
   Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is CurrentWeather &&
+            other is CurrentWeatherDTO &&
             (identical(other.dt, dt) || other.dt == dt) &&
             (identical(other.sunrise, sunrise) || other.sunrise == sunrise) &&
             (identical(other.sunset, sunset) || other.sunset == sunset) &&
@@ -398,7 +396,8 @@ mixin _$CurrentWeather {
             (identical(other.windDeg, windDeg) || other.windDeg == windDeg) &&
             (identical(other.windGust, windGust) ||
                 other.windGust == windGust) &&
-            const DeepCollectionEquality().equals(other.weather, weather));
+            const DeepCollectionEquality().equals(other.weather, weather) &&
+            (identical(other.rain, rain) || other.rain == rain));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -419,19 +418,20 @@ mixin _$CurrentWeather {
       windSpeed,
       windDeg,
       windGust,
-      const DeepCollectionEquality().hash(weather));
+      const DeepCollectionEquality().hash(weather),
+      rain);
 
   @override
   String toString() {
-    return 'CurrentWeather(dt: $dt, sunrise: $sunrise, sunset: $sunset, temp: $temp, feelsLike: $feelsLike, pressure: $pressure, humidity: $humidity, dewPoint: $dewPoint, uvi: $uvi, clouds: $clouds, visibility: $visibility, windSpeed: $windSpeed, windDeg: $windDeg, windGust: $windGust, weather: $weather)';
+    return 'CurrentWeatherDTO(dt: $dt, sunrise: $sunrise, sunset: $sunset, temp: $temp, feelsLike: $feelsLike, pressure: $pressure, humidity: $humidity, dewPoint: $dewPoint, uvi: $uvi, clouds: $clouds, visibility: $visibility, windSpeed: $windSpeed, windDeg: $windDeg, windGust: $windGust, weather: $weather, rain: $rain)';
   }
 }
 
 /// @nodoc
-abstract mixin class $CurrentWeatherCopyWith<$Res> {
-  factory $CurrentWeatherCopyWith(
-          CurrentWeather value, $Res Function(CurrentWeather) _then) =
-      _$CurrentWeatherCopyWithImpl;
+abstract mixin class $CurrentWeatherDTOCopyWith<$Res> {
+  factory $CurrentWeatherDTOCopyWith(
+          CurrentWeatherDTO value, $Res Function(CurrentWeatherDTO) _then) =
+      _$CurrentWeatherDTOCopyWithImpl;
   @useResult
   $Res call(
       {int? dt,
@@ -441,25 +441,28 @@ abstract mixin class $CurrentWeatherCopyWith<$Res> {
       @JsonKey(name: 'feels_like') double? feelsLike,
       int? pressure,
       int? humidity,
-      @JsonKey(name: 'dew_point') double? dewPoint,
+      @JsonKey(name: 'dew_point') int? dewPoint,
       double? uvi,
       int? clouds,
       int? visibility,
       @JsonKey(name: 'wind_speed') double? windSpeed,
       @JsonKey(name: 'wind_deg') int? windDeg,
       @JsonKey(name: 'wind_gust') double? windGust,
-      List<WeatherCondition>? weather});
+      List<WeatherConditionDTO>? weather,
+      Rain1HDTO? rain});
+
+  $Rain1HDTOCopyWith<$Res>? get rain;
 }
 
 /// @nodoc
-class _$CurrentWeatherCopyWithImpl<$Res>
-    implements $CurrentWeatherCopyWith<$Res> {
-  _$CurrentWeatherCopyWithImpl(this._self, this._then);
+class _$CurrentWeatherDTOCopyWithImpl<$Res>
+    implements $CurrentWeatherDTOCopyWith<$Res> {
+  _$CurrentWeatherDTOCopyWithImpl(this._self, this._then);
 
-  final CurrentWeather _self;
-  final $Res Function(CurrentWeather) _then;
+  final CurrentWeatherDTO _self;
+  final $Res Function(CurrentWeatherDTO) _then;
 
-  /// Create a copy of CurrentWeather
+  /// Create a copy of CurrentWeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -479,6 +482,7 @@ class _$CurrentWeatherCopyWithImpl<$Res>
     Object? windDeg = freezed,
     Object? windGust = freezed,
     Object? weather = freezed,
+    Object? rain = freezed,
   }) {
     return _then(_self.copyWith(
       dt: freezed == dt
@@ -512,7 +516,7 @@ class _$CurrentWeatherCopyWithImpl<$Res>
       dewPoint: freezed == dewPoint
           ? _self.dewPoint
           : dewPoint // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as int?,
       uvi: freezed == uvi
           ? _self.uvi
           : uvi // ignore: cast_nullable_to_non_nullable
@@ -540,15 +544,33 @@ class _$CurrentWeatherCopyWithImpl<$Res>
       weather: freezed == weather
           ? _self.weather
           : weather // ignore: cast_nullable_to_non_nullable
-              as List<WeatherCondition>?,
+              as List<WeatherConditionDTO>?,
+      rain: freezed == rain
+          ? _self.rain
+          : rain // ignore: cast_nullable_to_non_nullable
+              as Rain1HDTO?,
     ));
+  }
+
+  /// Create a copy of CurrentWeatherDTO
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Rain1HDTOCopyWith<$Res>? get rain {
+    if (_self.rain == null) {
+      return null;
+    }
+
+    return $Rain1HDTOCopyWith<$Res>(_self.rain!, (value) {
+      return _then(_self.copyWith(rain: value));
+    });
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _CurrentWeather implements CurrentWeather {
-  const _CurrentWeather(
+class _CurrentWeatherDTO implements CurrentWeatherDTO {
+  const _CurrentWeatherDTO(
       {this.dt,
       this.sunrise,
       this.sunset,
@@ -563,10 +585,11 @@ class _CurrentWeather implements CurrentWeather {
       @JsonKey(name: 'wind_speed') this.windSpeed,
       @JsonKey(name: 'wind_deg') this.windDeg,
       @JsonKey(name: 'wind_gust') this.windGust,
-      final List<WeatherCondition>? weather})
+      final List<WeatherConditionDTO>? weather,
+      this.rain})
       : _weather = weather;
-  factory _CurrentWeather.fromJson(Map<String, dynamic> json) =>
-      _$CurrentWeatherFromJson(json);
+  factory _CurrentWeatherDTO.fromJson(Map<String, dynamic> json) =>
+      _$CurrentWeatherDTOFromJson(json);
 
   @override
   final int? dt;
@@ -585,7 +608,7 @@ class _CurrentWeather implements CurrentWeather {
   final int? humidity;
   @override
   @JsonKey(name: 'dew_point')
-  final double? dewPoint;
+  final int? dewPoint;
   @override
   final double? uvi;
   @override
@@ -601,9 +624,9 @@ class _CurrentWeather implements CurrentWeather {
   @override
   @JsonKey(name: 'wind_gust')
   final double? windGust;
-  final List<WeatherCondition>? _weather;
+  final List<WeatherConditionDTO>? _weather;
   @override
-  List<WeatherCondition>? get weather {
+  List<WeatherConditionDTO>? get weather {
     final value = _weather;
     if (value == null) return null;
     if (_weather is EqualUnmodifiableListView) return _weather;
@@ -611,17 +634,20 @@ class _CurrentWeather implements CurrentWeather {
     return EqualUnmodifiableListView(value);
   }
 
-  /// Create a copy of CurrentWeather
+  @override
+  final Rain1HDTO? rain;
+
+  /// Create a copy of CurrentWeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$CurrentWeatherCopyWith<_CurrentWeather> get copyWith =>
-      __$CurrentWeatherCopyWithImpl<_CurrentWeather>(this, _$identity);
+  _$CurrentWeatherDTOCopyWith<_CurrentWeatherDTO> get copyWith =>
+      __$CurrentWeatherDTOCopyWithImpl<_CurrentWeatherDTO>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$CurrentWeatherToJson(
+    return _$CurrentWeatherDTOToJson(
       this,
     );
   }
@@ -630,7 +656,7 @@ class _CurrentWeather implements CurrentWeather {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CurrentWeather &&
+            other is _CurrentWeatherDTO &&
             (identical(other.dt, dt) || other.dt == dt) &&
             (identical(other.sunrise, sunrise) || other.sunrise == sunrise) &&
             (identical(other.sunset, sunset) || other.sunset == sunset) &&
@@ -652,7 +678,8 @@ class _CurrentWeather implements CurrentWeather {
             (identical(other.windDeg, windDeg) || other.windDeg == windDeg) &&
             (identical(other.windGust, windGust) ||
                 other.windGust == windGust) &&
-            const DeepCollectionEquality().equals(other._weather, _weather));
+            const DeepCollectionEquality().equals(other._weather, _weather) &&
+            (identical(other.rain, rain) || other.rain == rain));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -673,20 +700,21 @@ class _CurrentWeather implements CurrentWeather {
       windSpeed,
       windDeg,
       windGust,
-      const DeepCollectionEquality().hash(_weather));
+      const DeepCollectionEquality().hash(_weather),
+      rain);
 
   @override
   String toString() {
-    return 'CurrentWeather(dt: $dt, sunrise: $sunrise, sunset: $sunset, temp: $temp, feelsLike: $feelsLike, pressure: $pressure, humidity: $humidity, dewPoint: $dewPoint, uvi: $uvi, clouds: $clouds, visibility: $visibility, windSpeed: $windSpeed, windDeg: $windDeg, windGust: $windGust, weather: $weather)';
+    return 'CurrentWeatherDTO(dt: $dt, sunrise: $sunrise, sunset: $sunset, temp: $temp, feelsLike: $feelsLike, pressure: $pressure, humidity: $humidity, dewPoint: $dewPoint, uvi: $uvi, clouds: $clouds, visibility: $visibility, windSpeed: $windSpeed, windDeg: $windDeg, windGust: $windGust, weather: $weather, rain: $rain)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$CurrentWeatherCopyWith<$Res>
-    implements $CurrentWeatherCopyWith<$Res> {
-  factory _$CurrentWeatherCopyWith(
-          _CurrentWeather value, $Res Function(_CurrentWeather) _then) =
-      __$CurrentWeatherCopyWithImpl;
+abstract mixin class _$CurrentWeatherDTOCopyWith<$Res>
+    implements $CurrentWeatherDTOCopyWith<$Res> {
+  factory _$CurrentWeatherDTOCopyWith(
+          _CurrentWeatherDTO value, $Res Function(_CurrentWeatherDTO) _then) =
+      __$CurrentWeatherDTOCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -697,25 +725,29 @@ abstract mixin class _$CurrentWeatherCopyWith<$Res>
       @JsonKey(name: 'feels_like') double? feelsLike,
       int? pressure,
       int? humidity,
-      @JsonKey(name: 'dew_point') double? dewPoint,
+      @JsonKey(name: 'dew_point') int? dewPoint,
       double? uvi,
       int? clouds,
       int? visibility,
       @JsonKey(name: 'wind_speed') double? windSpeed,
       @JsonKey(name: 'wind_deg') int? windDeg,
       @JsonKey(name: 'wind_gust') double? windGust,
-      List<WeatherCondition>? weather});
+      List<WeatherConditionDTO>? weather,
+      Rain1HDTO? rain});
+
+  @override
+  $Rain1HDTOCopyWith<$Res>? get rain;
 }
 
 /// @nodoc
-class __$CurrentWeatherCopyWithImpl<$Res>
-    implements _$CurrentWeatherCopyWith<$Res> {
-  __$CurrentWeatherCopyWithImpl(this._self, this._then);
+class __$CurrentWeatherDTOCopyWithImpl<$Res>
+    implements _$CurrentWeatherDTOCopyWith<$Res> {
+  __$CurrentWeatherDTOCopyWithImpl(this._self, this._then);
 
-  final _CurrentWeather _self;
-  final $Res Function(_CurrentWeather) _then;
+  final _CurrentWeatherDTO _self;
+  final $Res Function(_CurrentWeatherDTO) _then;
 
-  /// Create a copy of CurrentWeather
+  /// Create a copy of CurrentWeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -735,8 +767,9 @@ class __$CurrentWeatherCopyWithImpl<$Res>
     Object? windDeg = freezed,
     Object? windGust = freezed,
     Object? weather = freezed,
+    Object? rain = freezed,
   }) {
-    return _then(_CurrentWeather(
+    return _then(_CurrentWeatherDTO(
       dt: freezed == dt
           ? _self.dt
           : dt // ignore: cast_nullable_to_non_nullable
@@ -768,7 +801,7 @@ class __$CurrentWeatherCopyWithImpl<$Res>
       dewPoint: freezed == dewPoint
           ? _self.dewPoint
           : dewPoint // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as int?,
       uvi: freezed == uvi
           ? _self.uvi
           : uvi // ignore: cast_nullable_to_non_nullable
@@ -796,13 +829,31 @@ class __$CurrentWeatherCopyWithImpl<$Res>
       weather: freezed == weather
           ? _self._weather
           : weather // ignore: cast_nullable_to_non_nullable
-              as List<WeatherCondition>?,
+              as List<WeatherConditionDTO>?,
+      rain: freezed == rain
+          ? _self.rain
+          : rain // ignore: cast_nullable_to_non_nullable
+              as Rain1HDTO?,
     ));
+  }
+
+  /// Create a copy of CurrentWeatherDTO
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Rain1HDTOCopyWith<$Res>? get rain {
+    if (_self.rain == null) {
+      return null;
+    }
+
+    return $Rain1HDTOCopyWith<$Res>(_self.rain!, (value) {
+      return _then(_self.copyWith(rain: value));
+    });
   }
 }
 
 /// @nodoc
-mixin _$HourlyWeather {
+mixin _$HourlyWeatherDTO {
   int? get dt;
   double? get temp;
   @JsonKey(name: 'feels_like')
@@ -810,7 +861,7 @@ mixin _$HourlyWeather {
   int? get pressure;
   int? get humidity;
   @JsonKey(name: 'dew_point')
-  double? get dewPoint;
+  int? get dewPoint;
   double? get uvi;
   int? get clouds;
   int? get visibility;
@@ -820,25 +871,26 @@ mixin _$HourlyWeather {
   int? get windDeg;
   @JsonKey(name: 'wind_gust')
   double? get windGust;
-  List<WeatherCondition>? get weather;
+  List<WeatherConditionDTO>? get weather;
   double? get pop;
+  Rain1HDTO? get rain;
 
-  /// Create a copy of HourlyWeather
+  /// Create a copy of HourlyWeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $HourlyWeatherCopyWith<HourlyWeather> get copyWith =>
-      _$HourlyWeatherCopyWithImpl<HourlyWeather>(
-          this as HourlyWeather, _$identity);
+  $HourlyWeatherDTOCopyWith<HourlyWeatherDTO> get copyWith =>
+      _$HourlyWeatherDTOCopyWithImpl<HourlyWeatherDTO>(
+          this as HourlyWeatherDTO, _$identity);
 
-  /// Serializes this HourlyWeather to a JSON map.
+  /// Serializes this HourlyWeatherDTO to a JSON map.
   Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is HourlyWeather &&
+            other is HourlyWeatherDTO &&
             (identical(other.dt, dt) || other.dt == dt) &&
             (identical(other.temp, temp) || other.temp == temp) &&
             (identical(other.feelsLike, feelsLike) ||
@@ -859,7 +911,8 @@ mixin _$HourlyWeather {
             (identical(other.windGust, windGust) ||
                 other.windGust == windGust) &&
             const DeepCollectionEquality().equals(other.weather, weather) &&
-            (identical(other.pop, pop) || other.pop == pop));
+            (identical(other.pop, pop) || other.pop == pop) &&
+            (identical(other.rain, rain) || other.rain == rain));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -879,19 +932,20 @@ mixin _$HourlyWeather {
       windDeg,
       windGust,
       const DeepCollectionEquality().hash(weather),
-      pop);
+      pop,
+      rain);
 
   @override
   String toString() {
-    return 'HourlyWeather(dt: $dt, temp: $temp, feelsLike: $feelsLike, pressure: $pressure, humidity: $humidity, dewPoint: $dewPoint, uvi: $uvi, clouds: $clouds, visibility: $visibility, windSpeed: $windSpeed, windDeg: $windDeg, windGust: $windGust, weather: $weather, pop: $pop)';
+    return 'HourlyWeatherDTO(dt: $dt, temp: $temp, feelsLike: $feelsLike, pressure: $pressure, humidity: $humidity, dewPoint: $dewPoint, uvi: $uvi, clouds: $clouds, visibility: $visibility, windSpeed: $windSpeed, windDeg: $windDeg, windGust: $windGust, weather: $weather, pop: $pop, rain: $rain)';
   }
 }
 
 /// @nodoc
-abstract mixin class $HourlyWeatherCopyWith<$Res> {
-  factory $HourlyWeatherCopyWith(
-          HourlyWeather value, $Res Function(HourlyWeather) _then) =
-      _$HourlyWeatherCopyWithImpl;
+abstract mixin class $HourlyWeatherDTOCopyWith<$Res> {
+  factory $HourlyWeatherDTOCopyWith(
+          HourlyWeatherDTO value, $Res Function(HourlyWeatherDTO) _then) =
+      _$HourlyWeatherDTOCopyWithImpl;
   @useResult
   $Res call(
       {int? dt,
@@ -899,26 +953,29 @@ abstract mixin class $HourlyWeatherCopyWith<$Res> {
       @JsonKey(name: 'feels_like') double? feelsLike,
       int? pressure,
       int? humidity,
-      @JsonKey(name: 'dew_point') double? dewPoint,
+      @JsonKey(name: 'dew_point') int? dewPoint,
       double? uvi,
       int? clouds,
       int? visibility,
       @JsonKey(name: 'wind_speed') double? windSpeed,
       @JsonKey(name: 'wind_deg') int? windDeg,
       @JsonKey(name: 'wind_gust') double? windGust,
-      List<WeatherCondition>? weather,
-      double? pop});
+      List<WeatherConditionDTO>? weather,
+      double? pop,
+      Rain1HDTO? rain});
+
+  $Rain1HDTOCopyWith<$Res>? get rain;
 }
 
 /// @nodoc
-class _$HourlyWeatherCopyWithImpl<$Res>
-    implements $HourlyWeatherCopyWith<$Res> {
-  _$HourlyWeatherCopyWithImpl(this._self, this._then);
+class _$HourlyWeatherDTOCopyWithImpl<$Res>
+    implements $HourlyWeatherDTOCopyWith<$Res> {
+  _$HourlyWeatherDTOCopyWithImpl(this._self, this._then);
 
-  final HourlyWeather _self;
-  final $Res Function(HourlyWeather) _then;
+  final HourlyWeatherDTO _self;
+  final $Res Function(HourlyWeatherDTO) _then;
 
-  /// Create a copy of HourlyWeather
+  /// Create a copy of HourlyWeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -937,6 +994,7 @@ class _$HourlyWeatherCopyWithImpl<$Res>
     Object? windGust = freezed,
     Object? weather = freezed,
     Object? pop = freezed,
+    Object? rain = freezed,
   }) {
     return _then(_self.copyWith(
       dt: freezed == dt
@@ -962,7 +1020,7 @@ class _$HourlyWeatherCopyWithImpl<$Res>
       dewPoint: freezed == dewPoint
           ? _self.dewPoint
           : dewPoint // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as int?,
       uvi: freezed == uvi
           ? _self.uvi
           : uvi // ignore: cast_nullable_to_non_nullable
@@ -990,19 +1048,37 @@ class _$HourlyWeatherCopyWithImpl<$Res>
       weather: freezed == weather
           ? _self.weather
           : weather // ignore: cast_nullable_to_non_nullable
-              as List<WeatherCondition>?,
+              as List<WeatherConditionDTO>?,
       pop: freezed == pop
           ? _self.pop
           : pop // ignore: cast_nullable_to_non_nullable
               as double?,
+      rain: freezed == rain
+          ? _self.rain
+          : rain // ignore: cast_nullable_to_non_nullable
+              as Rain1HDTO?,
     ));
+  }
+
+  /// Create a copy of HourlyWeatherDTO
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Rain1HDTOCopyWith<$Res>? get rain {
+    if (_self.rain == null) {
+      return null;
+    }
+
+    return $Rain1HDTOCopyWith<$Res>(_self.rain!, (value) {
+      return _then(_self.copyWith(rain: value));
+    });
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _HourlyWeather implements HourlyWeather {
-  const _HourlyWeather(
+class _HourlyWeatherDTO implements HourlyWeatherDTO {
+  const _HourlyWeatherDTO(
       {this.dt,
       this.temp,
       @JsonKey(name: 'feels_like') this.feelsLike,
@@ -1015,11 +1091,12 @@ class _HourlyWeather implements HourlyWeather {
       @JsonKey(name: 'wind_speed') this.windSpeed,
       @JsonKey(name: 'wind_deg') this.windDeg,
       @JsonKey(name: 'wind_gust') this.windGust,
-      final List<WeatherCondition>? weather,
-      this.pop})
+      final List<WeatherConditionDTO>? weather,
+      this.pop,
+      this.rain})
       : _weather = weather;
-  factory _HourlyWeather.fromJson(Map<String, dynamic> json) =>
-      _$HourlyWeatherFromJson(json);
+  factory _HourlyWeatherDTO.fromJson(Map<String, dynamic> json) =>
+      _$HourlyWeatherDTOFromJson(json);
 
   @override
   final int? dt;
@@ -1034,7 +1111,7 @@ class _HourlyWeather implements HourlyWeather {
   final int? humidity;
   @override
   @JsonKey(name: 'dew_point')
-  final double? dewPoint;
+  final int? dewPoint;
   @override
   final double? uvi;
   @override
@@ -1050,9 +1127,9 @@ class _HourlyWeather implements HourlyWeather {
   @override
   @JsonKey(name: 'wind_gust')
   final double? windGust;
-  final List<WeatherCondition>? _weather;
+  final List<WeatherConditionDTO>? _weather;
   @override
-  List<WeatherCondition>? get weather {
+  List<WeatherConditionDTO>? get weather {
     final value = _weather;
     if (value == null) return null;
     if (_weather is EqualUnmodifiableListView) return _weather;
@@ -1062,18 +1139,20 @@ class _HourlyWeather implements HourlyWeather {
 
   @override
   final double? pop;
+  @override
+  final Rain1HDTO? rain;
 
-  /// Create a copy of HourlyWeather
+  /// Create a copy of HourlyWeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$HourlyWeatherCopyWith<_HourlyWeather> get copyWith =>
-      __$HourlyWeatherCopyWithImpl<_HourlyWeather>(this, _$identity);
+  _$HourlyWeatherDTOCopyWith<_HourlyWeatherDTO> get copyWith =>
+      __$HourlyWeatherDTOCopyWithImpl<_HourlyWeatherDTO>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$HourlyWeatherToJson(
+    return _$HourlyWeatherDTOToJson(
       this,
     );
   }
@@ -1082,7 +1161,7 @@ class _HourlyWeather implements HourlyWeather {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _HourlyWeather &&
+            other is _HourlyWeatherDTO &&
             (identical(other.dt, dt) || other.dt == dt) &&
             (identical(other.temp, temp) || other.temp == temp) &&
             (identical(other.feelsLike, feelsLike) ||
@@ -1103,7 +1182,8 @@ class _HourlyWeather implements HourlyWeather {
             (identical(other.windGust, windGust) ||
                 other.windGust == windGust) &&
             const DeepCollectionEquality().equals(other._weather, _weather) &&
-            (identical(other.pop, pop) || other.pop == pop));
+            (identical(other.pop, pop) || other.pop == pop) &&
+            (identical(other.rain, rain) || other.rain == rain));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1123,20 +1203,21 @@ class _HourlyWeather implements HourlyWeather {
       windDeg,
       windGust,
       const DeepCollectionEquality().hash(_weather),
-      pop);
+      pop,
+      rain);
 
   @override
   String toString() {
-    return 'HourlyWeather(dt: $dt, temp: $temp, feelsLike: $feelsLike, pressure: $pressure, humidity: $humidity, dewPoint: $dewPoint, uvi: $uvi, clouds: $clouds, visibility: $visibility, windSpeed: $windSpeed, windDeg: $windDeg, windGust: $windGust, weather: $weather, pop: $pop)';
+    return 'HourlyWeatherDTO(dt: $dt, temp: $temp, feelsLike: $feelsLike, pressure: $pressure, humidity: $humidity, dewPoint: $dewPoint, uvi: $uvi, clouds: $clouds, visibility: $visibility, windSpeed: $windSpeed, windDeg: $windDeg, windGust: $windGust, weather: $weather, pop: $pop, rain: $rain)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$HourlyWeatherCopyWith<$Res>
-    implements $HourlyWeatherCopyWith<$Res> {
-  factory _$HourlyWeatherCopyWith(
-          _HourlyWeather value, $Res Function(_HourlyWeather) _then) =
-      __$HourlyWeatherCopyWithImpl;
+abstract mixin class _$HourlyWeatherDTOCopyWith<$Res>
+    implements $HourlyWeatherDTOCopyWith<$Res> {
+  factory _$HourlyWeatherDTOCopyWith(
+          _HourlyWeatherDTO value, $Res Function(_HourlyWeatherDTO) _then) =
+      __$HourlyWeatherDTOCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -1145,26 +1226,30 @@ abstract mixin class _$HourlyWeatherCopyWith<$Res>
       @JsonKey(name: 'feels_like') double? feelsLike,
       int? pressure,
       int? humidity,
-      @JsonKey(name: 'dew_point') double? dewPoint,
+      @JsonKey(name: 'dew_point') int? dewPoint,
       double? uvi,
       int? clouds,
       int? visibility,
       @JsonKey(name: 'wind_speed') double? windSpeed,
       @JsonKey(name: 'wind_deg') int? windDeg,
       @JsonKey(name: 'wind_gust') double? windGust,
-      List<WeatherCondition>? weather,
-      double? pop});
+      List<WeatherConditionDTO>? weather,
+      double? pop,
+      Rain1HDTO? rain});
+
+  @override
+  $Rain1HDTOCopyWith<$Res>? get rain;
 }
 
 /// @nodoc
-class __$HourlyWeatherCopyWithImpl<$Res>
-    implements _$HourlyWeatherCopyWith<$Res> {
-  __$HourlyWeatherCopyWithImpl(this._self, this._then);
+class __$HourlyWeatherDTOCopyWithImpl<$Res>
+    implements _$HourlyWeatherDTOCopyWith<$Res> {
+  __$HourlyWeatherDTOCopyWithImpl(this._self, this._then);
 
-  final _HourlyWeather _self;
-  final $Res Function(_HourlyWeather) _then;
+  final _HourlyWeatherDTO _self;
+  final $Res Function(_HourlyWeatherDTO) _then;
 
-  /// Create a copy of HourlyWeather
+  /// Create a copy of HourlyWeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -1183,8 +1268,9 @@ class __$HourlyWeatherCopyWithImpl<$Res>
     Object? windGust = freezed,
     Object? weather = freezed,
     Object? pop = freezed,
+    Object? rain = freezed,
   }) {
-    return _then(_HourlyWeather(
+    return _then(_HourlyWeatherDTO(
       dt: freezed == dt
           ? _self.dt
           : dt // ignore: cast_nullable_to_non_nullable
@@ -1208,7 +1294,7 @@ class __$HourlyWeatherCopyWithImpl<$Res>
       dewPoint: freezed == dewPoint
           ? _self.dewPoint
           : dewPoint // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as int?,
       uvi: freezed == uvi
           ? _self.uvi
           : uvi // ignore: cast_nullable_to_non_nullable
@@ -1236,17 +1322,35 @@ class __$HourlyWeatherCopyWithImpl<$Res>
       weather: freezed == weather
           ? _self._weather
           : weather // ignore: cast_nullable_to_non_nullable
-              as List<WeatherCondition>?,
+              as List<WeatherConditionDTO>?,
       pop: freezed == pop
           ? _self.pop
           : pop // ignore: cast_nullable_to_non_nullable
               as double?,
+      rain: freezed == rain
+          ? _self.rain
+          : rain // ignore: cast_nullable_to_non_nullable
+              as Rain1HDTO?,
     ));
+  }
+
+  /// Create a copy of HourlyWeatherDTO
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Rain1HDTOCopyWith<$Res>? get rain {
+    if (_self.rain == null) {
+      return null;
+    }
+
+    return $Rain1HDTOCopyWith<$Res>(_self.rain!, (value) {
+      return _then(_self.copyWith(rain: value));
+    });
   }
 }
 
 /// @nodoc
-mixin _$DailyWeather {
+mixin _$DailyWeatherDTO {
   int? get dt;
   int? get sunrise;
   int? get sunset;
@@ -1255,40 +1359,41 @@ mixin _$DailyWeather {
   @JsonKey(name: 'moon_phase')
   double? get moonPhase;
   String? get summary;
-  Temperature? get temp;
+  TemperatureDTO? get temp;
   @JsonKey(name: 'feels_like')
-  FeelsLike? get feelsLike;
+  FeelsLikeDTO? get feelsLike;
   int? get pressure;
   int? get humidity;
   @JsonKey(name: 'dew_point')
-  double? get dewPoint;
+  int? get dewPoint;
   @JsonKey(name: 'wind_speed')
   double? get windSpeed;
   @JsonKey(name: 'wind_deg')
   int? get windDeg;
   @JsonKey(name: 'wind_gust')
   double? get windGust;
-  List<WeatherCondition>? get weather;
+  List<WeatherConditionDTO>? get weather;
   int? get clouds;
   double? get pop; // Probability of precipitation (can also be in daily)
-  double? get uvi;
+  double? get uvi; // UVI can also be in daily
+  double? get rain;
 
-  /// Create a copy of DailyWeather
+  /// Create a copy of DailyWeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $DailyWeatherCopyWith<DailyWeather> get copyWith =>
-      _$DailyWeatherCopyWithImpl<DailyWeather>(
-          this as DailyWeather, _$identity);
+  $DailyWeatherDTOCopyWith<DailyWeatherDTO> get copyWith =>
+      _$DailyWeatherDTOCopyWithImpl<DailyWeatherDTO>(
+          this as DailyWeatherDTO, _$identity);
 
-  /// Serializes this DailyWeather to a JSON map.
+  /// Serializes this DailyWeatherDTO to a JSON map.
   Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DailyWeather &&
+            other is DailyWeatherDTO &&
             (identical(other.dt, dt) || other.dt == dt) &&
             (identical(other.sunrise, sunrise) || other.sunrise == sunrise) &&
             (identical(other.sunset, sunset) || other.sunset == sunset) &&
@@ -1315,7 +1420,8 @@ mixin _$DailyWeather {
             const DeepCollectionEquality().equals(other.weather, weather) &&
             (identical(other.clouds, clouds) || other.clouds == clouds) &&
             (identical(other.pop, pop) || other.pop == pop) &&
-            (identical(other.uvi, uvi) || other.uvi == uvi));
+            (identical(other.uvi, uvi) || other.uvi == uvi) &&
+            (identical(other.rain, rain) || other.rain == rain));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1340,20 +1446,21 @@ mixin _$DailyWeather {
         const DeepCollectionEquality().hash(weather),
         clouds,
         pop,
-        uvi
+        uvi,
+        rain
       ]);
 
   @override
   String toString() {
-    return 'DailyWeather(dt: $dt, sunrise: $sunrise, sunset: $sunset, moonrise: $moonrise, moonset: $moonset, moonPhase: $moonPhase, summary: $summary, temp: $temp, feelsLike: $feelsLike, pressure: $pressure, humidity: $humidity, dewPoint: $dewPoint, windSpeed: $windSpeed, windDeg: $windDeg, windGust: $windGust, weather: $weather, clouds: $clouds, pop: $pop, uvi: $uvi)';
+    return 'DailyWeatherDTO(dt: $dt, sunrise: $sunrise, sunset: $sunset, moonrise: $moonrise, moonset: $moonset, moonPhase: $moonPhase, summary: $summary, temp: $temp, feelsLike: $feelsLike, pressure: $pressure, humidity: $humidity, dewPoint: $dewPoint, windSpeed: $windSpeed, windDeg: $windDeg, windGust: $windGust, weather: $weather, clouds: $clouds, pop: $pop, uvi: $uvi, rain: $rain)';
   }
 }
 
 /// @nodoc
-abstract mixin class $DailyWeatherCopyWith<$Res> {
-  factory $DailyWeatherCopyWith(
-          DailyWeather value, $Res Function(DailyWeather) _then) =
-      _$DailyWeatherCopyWithImpl;
+abstract mixin class $DailyWeatherDTOCopyWith<$Res> {
+  factory $DailyWeatherDTOCopyWith(
+          DailyWeatherDTO value, $Res Function(DailyWeatherDTO) _then) =
+      _$DailyWeatherDTOCopyWithImpl;
   @useResult
   $Res call(
       {int? dt,
@@ -1363,31 +1470,33 @@ abstract mixin class $DailyWeatherCopyWith<$Res> {
       int? moonset,
       @JsonKey(name: 'moon_phase') double? moonPhase,
       String? summary,
-      Temperature? temp,
-      @JsonKey(name: 'feels_like') FeelsLike? feelsLike,
+      TemperatureDTO? temp,
+      @JsonKey(name: 'feels_like') FeelsLikeDTO? feelsLike,
       int? pressure,
       int? humidity,
-      @JsonKey(name: 'dew_point') double? dewPoint,
+      @JsonKey(name: 'dew_point') int? dewPoint,
       @JsonKey(name: 'wind_speed') double? windSpeed,
       @JsonKey(name: 'wind_deg') int? windDeg,
       @JsonKey(name: 'wind_gust') double? windGust,
-      List<WeatherCondition>? weather,
+      List<WeatherConditionDTO>? weather,
       int? clouds,
       double? pop,
-      double? uvi});
+      double? uvi,
+      double? rain});
 
-  $TemperatureCopyWith<$Res>? get temp;
-  $FeelsLikeCopyWith<$Res>? get feelsLike;
+  $TemperatureDTOCopyWith<$Res>? get temp;
+  $FeelsLikeDTOCopyWith<$Res>? get feelsLike;
 }
 
 /// @nodoc
-class _$DailyWeatherCopyWithImpl<$Res> implements $DailyWeatherCopyWith<$Res> {
-  _$DailyWeatherCopyWithImpl(this._self, this._then);
+class _$DailyWeatherDTOCopyWithImpl<$Res>
+    implements $DailyWeatherDTOCopyWith<$Res> {
+  _$DailyWeatherDTOCopyWithImpl(this._self, this._then);
 
-  final DailyWeather _self;
-  final $Res Function(DailyWeather) _then;
+  final DailyWeatherDTO _self;
+  final $Res Function(DailyWeatherDTO) _then;
 
-  /// Create a copy of DailyWeather
+  /// Create a copy of DailyWeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -1411,6 +1520,7 @@ class _$DailyWeatherCopyWithImpl<$Res> implements $DailyWeatherCopyWith<$Res> {
     Object? clouds = freezed,
     Object? pop = freezed,
     Object? uvi = freezed,
+    Object? rain = freezed,
   }) {
     return _then(_self.copyWith(
       dt: freezed == dt
@@ -1444,11 +1554,11 @@ class _$DailyWeatherCopyWithImpl<$Res> implements $DailyWeatherCopyWith<$Res> {
       temp: freezed == temp
           ? _self.temp
           : temp // ignore: cast_nullable_to_non_nullable
-              as Temperature?,
+              as TemperatureDTO?,
       feelsLike: freezed == feelsLike
           ? _self.feelsLike
           : feelsLike // ignore: cast_nullable_to_non_nullable
-              as FeelsLike?,
+              as FeelsLikeDTO?,
       pressure: freezed == pressure
           ? _self.pressure
           : pressure // ignore: cast_nullable_to_non_nullable
@@ -1460,7 +1570,7 @@ class _$DailyWeatherCopyWithImpl<$Res> implements $DailyWeatherCopyWith<$Res> {
       dewPoint: freezed == dewPoint
           ? _self.dewPoint
           : dewPoint // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as int?,
       windSpeed: freezed == windSpeed
           ? _self.windSpeed
           : windSpeed // ignore: cast_nullable_to_non_nullable
@@ -1476,7 +1586,7 @@ class _$DailyWeatherCopyWithImpl<$Res> implements $DailyWeatherCopyWith<$Res> {
       weather: freezed == weather
           ? _self.weather
           : weather // ignore: cast_nullable_to_non_nullable
-              as List<WeatherCondition>?,
+              as List<WeatherConditionDTO>?,
       clouds: freezed == clouds
           ? _self.clouds
           : clouds // ignore: cast_nullable_to_non_nullable
@@ -1489,33 +1599,37 @@ class _$DailyWeatherCopyWithImpl<$Res> implements $DailyWeatherCopyWith<$Res> {
           ? _self.uvi
           : uvi // ignore: cast_nullable_to_non_nullable
               as double?,
+      rain: freezed == rain
+          ? _self.rain
+          : rain // ignore: cast_nullable_to_non_nullable
+              as double?,
     ));
   }
 
-  /// Create a copy of DailyWeather
+  /// Create a copy of DailyWeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $TemperatureCopyWith<$Res>? get temp {
+  $TemperatureDTOCopyWith<$Res>? get temp {
     if (_self.temp == null) {
       return null;
     }
 
-    return $TemperatureCopyWith<$Res>(_self.temp!, (value) {
+    return $TemperatureDTOCopyWith<$Res>(_self.temp!, (value) {
       return _then(_self.copyWith(temp: value));
     });
   }
 
-  /// Create a copy of DailyWeather
+  /// Create a copy of DailyWeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $FeelsLikeCopyWith<$Res>? get feelsLike {
+  $FeelsLikeDTOCopyWith<$Res>? get feelsLike {
     if (_self.feelsLike == null) {
       return null;
     }
 
-    return $FeelsLikeCopyWith<$Res>(_self.feelsLike!, (value) {
+    return $FeelsLikeDTOCopyWith<$Res>(_self.feelsLike!, (value) {
       return _then(_self.copyWith(feelsLike: value));
     });
   }
@@ -1523,8 +1637,8 @@ class _$DailyWeatherCopyWithImpl<$Res> implements $DailyWeatherCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _DailyWeather implements DailyWeather {
-  const _DailyWeather(
+class _DailyWeatherDTO implements DailyWeatherDTO {
+  const _DailyWeatherDTO(
       {this.dt,
       this.sunrise,
       this.sunset,
@@ -1540,13 +1654,14 @@ class _DailyWeather implements DailyWeather {
       @JsonKey(name: 'wind_speed') this.windSpeed,
       @JsonKey(name: 'wind_deg') this.windDeg,
       @JsonKey(name: 'wind_gust') this.windGust,
-      final List<WeatherCondition>? weather,
+      final List<WeatherConditionDTO>? weather,
       this.clouds,
       this.pop,
-      this.uvi})
+      this.uvi,
+      this.rain})
       : _weather = weather;
-  factory _DailyWeather.fromJson(Map<String, dynamic> json) =>
-      _$DailyWeatherFromJson(json);
+  factory _DailyWeatherDTO.fromJson(Map<String, dynamic> json) =>
+      _$DailyWeatherDTOFromJson(json);
 
   @override
   final int? dt;
@@ -1564,17 +1679,17 @@ class _DailyWeather implements DailyWeather {
   @override
   final String? summary;
   @override
-  final Temperature? temp;
+  final TemperatureDTO? temp;
   @override
   @JsonKey(name: 'feels_like')
-  final FeelsLike? feelsLike;
+  final FeelsLikeDTO? feelsLike;
   @override
   final int? pressure;
   @override
   final int? humidity;
   @override
   @JsonKey(name: 'dew_point')
-  final double? dewPoint;
+  final int? dewPoint;
   @override
   @JsonKey(name: 'wind_speed')
   final double? windSpeed;
@@ -1584,9 +1699,9 @@ class _DailyWeather implements DailyWeather {
   @override
   @JsonKey(name: 'wind_gust')
   final double? windGust;
-  final List<WeatherCondition>? _weather;
+  final List<WeatherConditionDTO>? _weather;
   @override
-  List<WeatherCondition>? get weather {
+  List<WeatherConditionDTO>? get weather {
     final value = _weather;
     if (value == null) return null;
     if (_weather is EqualUnmodifiableListView) return _weather;
@@ -1601,18 +1716,21 @@ class _DailyWeather implements DailyWeather {
 // Probability of precipitation (can also be in daily)
   @override
   final double? uvi;
+// UVI can also be in daily
+  @override
+  final double? rain;
 
-  /// Create a copy of DailyWeather
+  /// Create a copy of DailyWeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$DailyWeatherCopyWith<_DailyWeather> get copyWith =>
-      __$DailyWeatherCopyWithImpl<_DailyWeather>(this, _$identity);
+  _$DailyWeatherDTOCopyWith<_DailyWeatherDTO> get copyWith =>
+      __$DailyWeatherDTOCopyWithImpl<_DailyWeatherDTO>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$DailyWeatherToJson(
+    return _$DailyWeatherDTOToJson(
       this,
     );
   }
@@ -1621,7 +1739,7 @@ class _DailyWeather implements DailyWeather {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DailyWeather &&
+            other is _DailyWeatherDTO &&
             (identical(other.dt, dt) || other.dt == dt) &&
             (identical(other.sunrise, sunrise) || other.sunrise == sunrise) &&
             (identical(other.sunset, sunset) || other.sunset == sunset) &&
@@ -1648,7 +1766,8 @@ class _DailyWeather implements DailyWeather {
             const DeepCollectionEquality().equals(other._weather, _weather) &&
             (identical(other.clouds, clouds) || other.clouds == clouds) &&
             (identical(other.pop, pop) || other.pop == pop) &&
-            (identical(other.uvi, uvi) || other.uvi == uvi));
+            (identical(other.uvi, uvi) || other.uvi == uvi) &&
+            (identical(other.rain, rain) || other.rain == rain));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1673,21 +1792,22 @@ class _DailyWeather implements DailyWeather {
         const DeepCollectionEquality().hash(_weather),
         clouds,
         pop,
-        uvi
+        uvi,
+        rain
       ]);
 
   @override
   String toString() {
-    return 'DailyWeather(dt: $dt, sunrise: $sunrise, sunset: $sunset, moonrise: $moonrise, moonset: $moonset, moonPhase: $moonPhase, summary: $summary, temp: $temp, feelsLike: $feelsLike, pressure: $pressure, humidity: $humidity, dewPoint: $dewPoint, windSpeed: $windSpeed, windDeg: $windDeg, windGust: $windGust, weather: $weather, clouds: $clouds, pop: $pop, uvi: $uvi)';
+    return 'DailyWeatherDTO(dt: $dt, sunrise: $sunrise, sunset: $sunset, moonrise: $moonrise, moonset: $moonset, moonPhase: $moonPhase, summary: $summary, temp: $temp, feelsLike: $feelsLike, pressure: $pressure, humidity: $humidity, dewPoint: $dewPoint, windSpeed: $windSpeed, windDeg: $windDeg, windGust: $windGust, weather: $weather, clouds: $clouds, pop: $pop, uvi: $uvi, rain: $rain)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$DailyWeatherCopyWith<$Res>
-    implements $DailyWeatherCopyWith<$Res> {
-  factory _$DailyWeatherCopyWith(
-          _DailyWeather value, $Res Function(_DailyWeather) _then) =
-      __$DailyWeatherCopyWithImpl;
+abstract mixin class _$DailyWeatherDTOCopyWith<$Res>
+    implements $DailyWeatherDTOCopyWith<$Res> {
+  factory _$DailyWeatherDTOCopyWith(
+          _DailyWeatherDTO value, $Res Function(_DailyWeatherDTO) _then) =
+      __$DailyWeatherDTOCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -1698,34 +1818,35 @@ abstract mixin class _$DailyWeatherCopyWith<$Res>
       int? moonset,
       @JsonKey(name: 'moon_phase') double? moonPhase,
       String? summary,
-      Temperature? temp,
-      @JsonKey(name: 'feels_like') FeelsLike? feelsLike,
+      TemperatureDTO? temp,
+      @JsonKey(name: 'feels_like') FeelsLikeDTO? feelsLike,
       int? pressure,
       int? humidity,
-      @JsonKey(name: 'dew_point') double? dewPoint,
+      @JsonKey(name: 'dew_point') int? dewPoint,
       @JsonKey(name: 'wind_speed') double? windSpeed,
       @JsonKey(name: 'wind_deg') int? windDeg,
       @JsonKey(name: 'wind_gust') double? windGust,
-      List<WeatherCondition>? weather,
+      List<WeatherConditionDTO>? weather,
       int? clouds,
       double? pop,
-      double? uvi});
+      double? uvi,
+      double? rain});
 
   @override
-  $TemperatureCopyWith<$Res>? get temp;
+  $TemperatureDTOCopyWith<$Res>? get temp;
   @override
-  $FeelsLikeCopyWith<$Res>? get feelsLike;
+  $FeelsLikeDTOCopyWith<$Res>? get feelsLike;
 }
 
 /// @nodoc
-class __$DailyWeatherCopyWithImpl<$Res>
-    implements _$DailyWeatherCopyWith<$Res> {
-  __$DailyWeatherCopyWithImpl(this._self, this._then);
+class __$DailyWeatherDTOCopyWithImpl<$Res>
+    implements _$DailyWeatherDTOCopyWith<$Res> {
+  __$DailyWeatherDTOCopyWithImpl(this._self, this._then);
 
-  final _DailyWeather _self;
-  final $Res Function(_DailyWeather) _then;
+  final _DailyWeatherDTO _self;
+  final $Res Function(_DailyWeatherDTO) _then;
 
-  /// Create a copy of DailyWeather
+  /// Create a copy of DailyWeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -1749,8 +1870,9 @@ class __$DailyWeatherCopyWithImpl<$Res>
     Object? clouds = freezed,
     Object? pop = freezed,
     Object? uvi = freezed,
+    Object? rain = freezed,
   }) {
-    return _then(_DailyWeather(
+    return _then(_DailyWeatherDTO(
       dt: freezed == dt
           ? _self.dt
           : dt // ignore: cast_nullable_to_non_nullable
@@ -1782,11 +1904,11 @@ class __$DailyWeatherCopyWithImpl<$Res>
       temp: freezed == temp
           ? _self.temp
           : temp // ignore: cast_nullable_to_non_nullable
-              as Temperature?,
+              as TemperatureDTO?,
       feelsLike: freezed == feelsLike
           ? _self.feelsLike
           : feelsLike // ignore: cast_nullable_to_non_nullable
-              as FeelsLike?,
+              as FeelsLikeDTO?,
       pressure: freezed == pressure
           ? _self.pressure
           : pressure // ignore: cast_nullable_to_non_nullable
@@ -1798,7 +1920,7 @@ class __$DailyWeatherCopyWithImpl<$Res>
       dewPoint: freezed == dewPoint
           ? _self.dewPoint
           : dewPoint // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as int?,
       windSpeed: freezed == windSpeed
           ? _self.windSpeed
           : windSpeed // ignore: cast_nullable_to_non_nullable
@@ -1814,7 +1936,7 @@ class __$DailyWeatherCopyWithImpl<$Res>
       weather: freezed == weather
           ? _self._weather
           : weather // ignore: cast_nullable_to_non_nullable
-              as List<WeatherCondition>?,
+              as List<WeatherConditionDTO>?,
       clouds: freezed == clouds
           ? _self.clouds
           : clouds // ignore: cast_nullable_to_non_nullable
@@ -1827,40 +1949,44 @@ class __$DailyWeatherCopyWithImpl<$Res>
           ? _self.uvi
           : uvi // ignore: cast_nullable_to_non_nullable
               as double?,
+      rain: freezed == rain
+          ? _self.rain
+          : rain // ignore: cast_nullable_to_non_nullable
+              as double?,
     ));
   }
 
-  /// Create a copy of DailyWeather
+  /// Create a copy of DailyWeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $TemperatureCopyWith<$Res>? get temp {
+  $TemperatureDTOCopyWith<$Res>? get temp {
     if (_self.temp == null) {
       return null;
     }
 
-    return $TemperatureCopyWith<$Res>(_self.temp!, (value) {
+    return $TemperatureDTOCopyWith<$Res>(_self.temp!, (value) {
       return _then(_self.copyWith(temp: value));
     });
   }
 
-  /// Create a copy of DailyWeather
+  /// Create a copy of DailyWeatherDTO
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $FeelsLikeCopyWith<$Res>? get feelsLike {
+  $FeelsLikeDTOCopyWith<$Res>? get feelsLike {
     if (_self.feelsLike == null) {
       return null;
     }
 
-    return $FeelsLikeCopyWith<$Res>(_self.feelsLike!, (value) {
+    return $FeelsLikeDTOCopyWith<$Res>(_self.feelsLike!, (value) {
       return _then(_self.copyWith(feelsLike: value));
     });
   }
 }
 
 /// @nodoc
-mixin _$Temperature {
+mixin _$TemperatureDTO {
   double? get day;
   double? get min;
   double? get max;
@@ -1868,21 +1994,22 @@ mixin _$Temperature {
   double? get eve;
   double? get morn;
 
-  /// Create a copy of Temperature
+  /// Create a copy of TemperatureDTO
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $TemperatureCopyWith<Temperature> get copyWith =>
-      _$TemperatureCopyWithImpl<Temperature>(this as Temperature, _$identity);
+  $TemperatureDTOCopyWith<TemperatureDTO> get copyWith =>
+      _$TemperatureDTOCopyWithImpl<TemperatureDTO>(
+          this as TemperatureDTO, _$identity);
 
-  /// Serializes this Temperature to a JSON map.
+  /// Serializes this TemperatureDTO to a JSON map.
   Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is Temperature &&
+            other is TemperatureDTO &&
             (identical(other.day, day) || other.day == day) &&
             (identical(other.min, min) || other.min == min) &&
             (identical(other.max, max) || other.max == max) &&
@@ -1897,15 +2024,15 @@ mixin _$Temperature {
 
   @override
   String toString() {
-    return 'Temperature(day: $day, min: $min, max: $max, night: $night, eve: $eve, morn: $morn)';
+    return 'TemperatureDTO(day: $day, min: $min, max: $max, night: $night, eve: $eve, morn: $morn)';
   }
 }
 
 /// @nodoc
-abstract mixin class $TemperatureCopyWith<$Res> {
-  factory $TemperatureCopyWith(
-          Temperature value, $Res Function(Temperature) _then) =
-      _$TemperatureCopyWithImpl;
+abstract mixin class $TemperatureDTOCopyWith<$Res> {
+  factory $TemperatureDTOCopyWith(
+          TemperatureDTO value, $Res Function(TemperatureDTO) _then) =
+      _$TemperatureDTOCopyWithImpl;
   @useResult
   $Res call(
       {double? day,
@@ -1917,13 +2044,14 @@ abstract mixin class $TemperatureCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TemperatureCopyWithImpl<$Res> implements $TemperatureCopyWith<$Res> {
-  _$TemperatureCopyWithImpl(this._self, this._then);
+class _$TemperatureDTOCopyWithImpl<$Res>
+    implements $TemperatureDTOCopyWith<$Res> {
+  _$TemperatureDTOCopyWithImpl(this._self, this._then);
 
-  final Temperature _self;
-  final $Res Function(Temperature) _then;
+  final TemperatureDTO _self;
+  final $Res Function(TemperatureDTO) _then;
 
-  /// Create a copy of Temperature
+  /// Create a copy of TemperatureDTO
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -1966,11 +2094,11 @@ class _$TemperatureCopyWithImpl<$Res> implements $TemperatureCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _Temperature implements Temperature {
-  const _Temperature(
+class _TemperatureDTO implements TemperatureDTO {
+  const _TemperatureDTO(
       {this.day, this.min, this.max, this.night, this.eve, this.morn});
-  factory _Temperature.fromJson(Map<String, dynamic> json) =>
-      _$TemperatureFromJson(json);
+  factory _TemperatureDTO.fromJson(Map<String, dynamic> json) =>
+      _$TemperatureDTOFromJson(json);
 
   @override
   final double? day;
@@ -1985,17 +2113,17 @@ class _Temperature implements Temperature {
   @override
   final double? morn;
 
-  /// Create a copy of Temperature
+  /// Create a copy of TemperatureDTO
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$TemperatureCopyWith<_Temperature> get copyWith =>
-      __$TemperatureCopyWithImpl<_Temperature>(this, _$identity);
+  _$TemperatureDTOCopyWith<_TemperatureDTO> get copyWith =>
+      __$TemperatureDTOCopyWithImpl<_TemperatureDTO>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$TemperatureToJson(
+    return _$TemperatureDTOToJson(
       this,
     );
   }
@@ -2004,7 +2132,7 @@ class _Temperature implements Temperature {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Temperature &&
+            other is _TemperatureDTO &&
             (identical(other.day, day) || other.day == day) &&
             (identical(other.min, min) || other.min == min) &&
             (identical(other.max, max) || other.max == max) &&
@@ -2019,16 +2147,16 @@ class _Temperature implements Temperature {
 
   @override
   String toString() {
-    return 'Temperature(day: $day, min: $min, max: $max, night: $night, eve: $eve, morn: $morn)';
+    return 'TemperatureDTO(day: $day, min: $min, max: $max, night: $night, eve: $eve, morn: $morn)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$TemperatureCopyWith<$Res>
-    implements $TemperatureCopyWith<$Res> {
-  factory _$TemperatureCopyWith(
-          _Temperature value, $Res Function(_Temperature) _then) =
-      __$TemperatureCopyWithImpl;
+abstract mixin class _$TemperatureDTOCopyWith<$Res>
+    implements $TemperatureDTOCopyWith<$Res> {
+  factory _$TemperatureDTOCopyWith(
+          _TemperatureDTO value, $Res Function(_TemperatureDTO) _then) =
+      __$TemperatureDTOCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -2041,13 +2169,14 @@ abstract mixin class _$TemperatureCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TemperatureCopyWithImpl<$Res> implements _$TemperatureCopyWith<$Res> {
-  __$TemperatureCopyWithImpl(this._self, this._then);
+class __$TemperatureDTOCopyWithImpl<$Res>
+    implements _$TemperatureDTOCopyWith<$Res> {
+  __$TemperatureDTOCopyWithImpl(this._self, this._then);
 
-  final _Temperature _self;
-  final $Res Function(_Temperature) _then;
+  final _TemperatureDTO _self;
+  final $Res Function(_TemperatureDTO) _then;
 
-  /// Create a copy of Temperature
+  /// Create a copy of TemperatureDTO
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -2059,7 +2188,7 @@ class __$TemperatureCopyWithImpl<$Res> implements _$TemperatureCopyWith<$Res> {
     Object? eve = freezed,
     Object? morn = freezed,
   }) {
-    return _then(_Temperature(
+    return _then(_TemperatureDTO(
       day: freezed == day
           ? _self.day
           : day // ignore: cast_nullable_to_non_nullable
@@ -2089,27 +2218,28 @@ class __$TemperatureCopyWithImpl<$Res> implements _$TemperatureCopyWith<$Res> {
 }
 
 /// @nodoc
-mixin _$FeelsLike {
+mixin _$FeelsLikeDTO {
   double? get day;
   double? get night;
   double? get eve;
   double? get morn;
 
-  /// Create a copy of FeelsLike
+  /// Create a copy of FeelsLikeDTO
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $FeelsLikeCopyWith<FeelsLike> get copyWith =>
-      _$FeelsLikeCopyWithImpl<FeelsLike>(this as FeelsLike, _$identity);
+  $FeelsLikeDTOCopyWith<FeelsLikeDTO> get copyWith =>
+      _$FeelsLikeDTOCopyWithImpl<FeelsLikeDTO>(
+          this as FeelsLikeDTO, _$identity);
 
-  /// Serializes this FeelsLike to a JSON map.
+  /// Serializes this FeelsLikeDTO to a JSON map.
   Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FeelsLike &&
+            other is FeelsLikeDTO &&
             (identical(other.day, day) || other.day == day) &&
             (identical(other.night, night) || other.night == night) &&
             (identical(other.eve, eve) || other.eve == eve) &&
@@ -2122,26 +2252,27 @@ mixin _$FeelsLike {
 
   @override
   String toString() {
-    return 'FeelsLike(day: $day, night: $night, eve: $eve, morn: $morn)';
+    return 'FeelsLikeDTO(day: $day, night: $night, eve: $eve, morn: $morn)';
   }
 }
 
 /// @nodoc
-abstract mixin class $FeelsLikeCopyWith<$Res> {
-  factory $FeelsLikeCopyWith(FeelsLike value, $Res Function(FeelsLike) _then) =
-      _$FeelsLikeCopyWithImpl;
+abstract mixin class $FeelsLikeDTOCopyWith<$Res> {
+  factory $FeelsLikeDTOCopyWith(
+          FeelsLikeDTO value, $Res Function(FeelsLikeDTO) _then) =
+      _$FeelsLikeDTOCopyWithImpl;
   @useResult
   $Res call({double? day, double? night, double? eve, double? morn});
 }
 
 /// @nodoc
-class _$FeelsLikeCopyWithImpl<$Res> implements $FeelsLikeCopyWith<$Res> {
-  _$FeelsLikeCopyWithImpl(this._self, this._then);
+class _$FeelsLikeDTOCopyWithImpl<$Res> implements $FeelsLikeDTOCopyWith<$Res> {
+  _$FeelsLikeDTOCopyWithImpl(this._self, this._then);
 
-  final FeelsLike _self;
-  final $Res Function(FeelsLike) _then;
+  final FeelsLikeDTO _self;
+  final $Res Function(FeelsLikeDTO) _then;
 
-  /// Create a copy of FeelsLike
+  /// Create a copy of FeelsLikeDTO
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -2174,10 +2305,10 @@ class _$FeelsLikeCopyWithImpl<$Res> implements $FeelsLikeCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _FeelsLike implements FeelsLike {
-  const _FeelsLike({this.day, this.night, this.eve, this.morn});
-  factory _FeelsLike.fromJson(Map<String, dynamic> json) =>
-      _$FeelsLikeFromJson(json);
+class _FeelsLikeDTO implements FeelsLikeDTO {
+  const _FeelsLikeDTO({this.day, this.night, this.eve, this.morn});
+  factory _FeelsLikeDTO.fromJson(Map<String, dynamic> json) =>
+      _$FeelsLikeDTOFromJson(json);
 
   @override
   final double? day;
@@ -2188,17 +2319,17 @@ class _FeelsLike implements FeelsLike {
   @override
   final double? morn;
 
-  /// Create a copy of FeelsLike
+  /// Create a copy of FeelsLikeDTO
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$FeelsLikeCopyWith<_FeelsLike> get copyWith =>
-      __$FeelsLikeCopyWithImpl<_FeelsLike>(this, _$identity);
+  _$FeelsLikeDTOCopyWith<_FeelsLikeDTO> get copyWith =>
+      __$FeelsLikeDTOCopyWithImpl<_FeelsLikeDTO>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$FeelsLikeToJson(
+    return _$FeelsLikeDTOToJson(
       this,
     );
   }
@@ -2207,7 +2338,7 @@ class _FeelsLike implements FeelsLike {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FeelsLike &&
+            other is _FeelsLikeDTO &&
             (identical(other.day, day) || other.day == day) &&
             (identical(other.night, night) || other.night == night) &&
             (identical(other.eve, eve) || other.eve == eve) &&
@@ -2220,29 +2351,30 @@ class _FeelsLike implements FeelsLike {
 
   @override
   String toString() {
-    return 'FeelsLike(day: $day, night: $night, eve: $eve, morn: $morn)';
+    return 'FeelsLikeDTO(day: $day, night: $night, eve: $eve, morn: $morn)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$FeelsLikeCopyWith<$Res>
-    implements $FeelsLikeCopyWith<$Res> {
-  factory _$FeelsLikeCopyWith(
-          _FeelsLike value, $Res Function(_FeelsLike) _then) =
-      __$FeelsLikeCopyWithImpl;
+abstract mixin class _$FeelsLikeDTOCopyWith<$Res>
+    implements $FeelsLikeDTOCopyWith<$Res> {
+  factory _$FeelsLikeDTOCopyWith(
+          _FeelsLikeDTO value, $Res Function(_FeelsLikeDTO) _then) =
+      __$FeelsLikeDTOCopyWithImpl;
   @override
   @useResult
   $Res call({double? day, double? night, double? eve, double? morn});
 }
 
 /// @nodoc
-class __$FeelsLikeCopyWithImpl<$Res> implements _$FeelsLikeCopyWith<$Res> {
-  __$FeelsLikeCopyWithImpl(this._self, this._then);
+class __$FeelsLikeDTOCopyWithImpl<$Res>
+    implements _$FeelsLikeDTOCopyWith<$Res> {
+  __$FeelsLikeDTOCopyWithImpl(this._self, this._then);
 
-  final _FeelsLike _self;
-  final $Res Function(_FeelsLike) _then;
+  final _FeelsLikeDTO _self;
+  final $Res Function(_FeelsLikeDTO) _then;
 
-  /// Create a copy of FeelsLike
+  /// Create a copy of FeelsLikeDTO
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -2252,7 +2384,7 @@ class __$FeelsLikeCopyWithImpl<$Res> implements _$FeelsLikeCopyWith<$Res> {
     Object? eve = freezed,
     Object? morn = freezed,
   }) {
-    return _then(_FeelsLike(
+    return _then(_FeelsLikeDTO(
       day: freezed == day
           ? _self.day
           : day // ignore: cast_nullable_to_non_nullable
@@ -2274,28 +2406,28 @@ class __$FeelsLikeCopyWithImpl<$Res> implements _$FeelsLikeCopyWith<$Res> {
 }
 
 /// @nodoc
-mixin _$WeatherCondition {
+mixin _$WeatherConditionDTO {
   int? get id;
   String? get main;
   String? get description;
   String? get icon;
 
-  /// Create a copy of WeatherCondition
+  /// Create a copy of WeatherConditionDTO
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $WeatherConditionCopyWith<WeatherCondition> get copyWith =>
-      _$WeatherConditionCopyWithImpl<WeatherCondition>(
-          this as WeatherCondition, _$identity);
+  $WeatherConditionDTOCopyWith<WeatherConditionDTO> get copyWith =>
+      _$WeatherConditionDTOCopyWithImpl<WeatherConditionDTO>(
+          this as WeatherConditionDTO, _$identity);
 
-  /// Serializes this WeatherCondition to a JSON map.
+  /// Serializes this WeatherConditionDTO to a JSON map.
   Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is WeatherCondition &&
+            other is WeatherConditionDTO &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.main, main) || other.main == main) &&
             (identical(other.description, description) ||
@@ -2309,28 +2441,28 @@ mixin _$WeatherCondition {
 
   @override
   String toString() {
-    return 'WeatherCondition(id: $id, main: $main, description: $description, icon: $icon)';
+    return 'WeatherConditionDTO(id: $id, main: $main, description: $description, icon: $icon)';
   }
 }
 
 /// @nodoc
-abstract mixin class $WeatherConditionCopyWith<$Res> {
-  factory $WeatherConditionCopyWith(
-          WeatherCondition value, $Res Function(WeatherCondition) _then) =
-      _$WeatherConditionCopyWithImpl;
+abstract mixin class $WeatherConditionDTOCopyWith<$Res> {
+  factory $WeatherConditionDTOCopyWith(
+          WeatherConditionDTO value, $Res Function(WeatherConditionDTO) _then) =
+      _$WeatherConditionDTOCopyWithImpl;
   @useResult
   $Res call({int? id, String? main, String? description, String? icon});
 }
 
 /// @nodoc
-class _$WeatherConditionCopyWithImpl<$Res>
-    implements $WeatherConditionCopyWith<$Res> {
-  _$WeatherConditionCopyWithImpl(this._self, this._then);
+class _$WeatherConditionDTOCopyWithImpl<$Res>
+    implements $WeatherConditionDTOCopyWith<$Res> {
+  _$WeatherConditionDTOCopyWithImpl(this._self, this._then);
 
-  final WeatherCondition _self;
-  final $Res Function(WeatherCondition) _then;
+  final WeatherConditionDTO _self;
+  final $Res Function(WeatherConditionDTO) _then;
 
-  /// Create a copy of WeatherCondition
+  /// Create a copy of WeatherConditionDTO
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -2363,10 +2495,10 @@ class _$WeatherConditionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _WeatherCondition implements WeatherCondition {
-  const _WeatherCondition({this.id, this.main, this.description, this.icon});
-  factory _WeatherCondition.fromJson(Map<String, dynamic> json) =>
-      _$WeatherConditionFromJson(json);
+class _WeatherConditionDTO implements WeatherConditionDTO {
+  const _WeatherConditionDTO({this.id, this.main, this.description, this.icon});
+  factory _WeatherConditionDTO.fromJson(Map<String, dynamic> json) =>
+      _$WeatherConditionDTOFromJson(json);
 
   @override
   final int? id;
@@ -2377,17 +2509,18 @@ class _WeatherCondition implements WeatherCondition {
   @override
   final String? icon;
 
-  /// Create a copy of WeatherCondition
+  /// Create a copy of WeatherConditionDTO
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$WeatherConditionCopyWith<_WeatherCondition> get copyWith =>
-      __$WeatherConditionCopyWithImpl<_WeatherCondition>(this, _$identity);
+  _$WeatherConditionDTOCopyWith<_WeatherConditionDTO> get copyWith =>
+      __$WeatherConditionDTOCopyWithImpl<_WeatherConditionDTO>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$WeatherConditionToJson(
+    return _$WeatherConditionDTOToJson(
       this,
     );
   }
@@ -2396,7 +2529,7 @@ class _WeatherCondition implements WeatherCondition {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _WeatherCondition &&
+            other is _WeatherConditionDTO &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.main, main) || other.main == main) &&
             (identical(other.description, description) ||
@@ -2410,30 +2543,30 @@ class _WeatherCondition implements WeatherCondition {
 
   @override
   String toString() {
-    return 'WeatherCondition(id: $id, main: $main, description: $description, icon: $icon)';
+    return 'WeatherConditionDTO(id: $id, main: $main, description: $description, icon: $icon)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$WeatherConditionCopyWith<$Res>
-    implements $WeatherConditionCopyWith<$Res> {
-  factory _$WeatherConditionCopyWith(
-          _WeatherCondition value, $Res Function(_WeatherCondition) _then) =
-      __$WeatherConditionCopyWithImpl;
+abstract mixin class _$WeatherConditionDTOCopyWith<$Res>
+    implements $WeatherConditionDTOCopyWith<$Res> {
+  factory _$WeatherConditionDTOCopyWith(_WeatherConditionDTO value,
+          $Res Function(_WeatherConditionDTO) _then) =
+      __$WeatherConditionDTOCopyWithImpl;
   @override
   @useResult
   $Res call({int? id, String? main, String? description, String? icon});
 }
 
 /// @nodoc
-class __$WeatherConditionCopyWithImpl<$Res>
-    implements _$WeatherConditionCopyWith<$Res> {
-  __$WeatherConditionCopyWithImpl(this._self, this._then);
+class __$WeatherConditionDTOCopyWithImpl<$Res>
+    implements _$WeatherConditionDTOCopyWith<$Res> {
+  __$WeatherConditionDTOCopyWithImpl(this._self, this._then);
 
-  final _WeatherCondition _self;
-  final $Res Function(_WeatherCondition) _then;
+  final _WeatherConditionDTO _self;
+  final $Res Function(_WeatherConditionDTO) _then;
 
-  /// Create a copy of WeatherCondition
+  /// Create a copy of WeatherConditionDTO
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -2443,7 +2576,7 @@ class __$WeatherConditionCopyWithImpl<$Res>
     Object? description = freezed,
     Object? icon = freezed,
   }) {
-    return _then(_WeatherCondition(
+    return _then(_WeatherConditionDTO(
       id: freezed == id
           ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -2460,6 +2593,148 @@ class __$WeatherConditionCopyWithImpl<$Res>
           ? _self.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as String?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$Rain1HDTO {
+  @JsonKey(name: '1h')
+  double? get anHour;
+
+  /// Create a copy of Rain1HDTO
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $Rain1HDTOCopyWith<Rain1HDTO> get copyWith =>
+      _$Rain1HDTOCopyWithImpl<Rain1HDTO>(this as Rain1HDTO, _$identity);
+
+  /// Serializes this Rain1HDTO to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Rain1HDTO &&
+            (identical(other.anHour, anHour) || other.anHour == anHour));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, anHour);
+
+  @override
+  String toString() {
+    return 'Rain1HDTO(anHour: $anHour)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $Rain1HDTOCopyWith<$Res> {
+  factory $Rain1HDTOCopyWith(Rain1HDTO value, $Res Function(Rain1HDTO) _then) =
+      _$Rain1HDTOCopyWithImpl;
+  @useResult
+  $Res call({@JsonKey(name: '1h') double? anHour});
+}
+
+/// @nodoc
+class _$Rain1HDTOCopyWithImpl<$Res> implements $Rain1HDTOCopyWith<$Res> {
+  _$Rain1HDTOCopyWithImpl(this._self, this._then);
+
+  final Rain1HDTO _self;
+  final $Res Function(Rain1HDTO) _then;
+
+  /// Create a copy of Rain1HDTO
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? anHour = freezed,
+  }) {
+    return _then(_self.copyWith(
+      anHour: freezed == anHour
+          ? _self.anHour
+          : anHour // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _Rain1HDTO implements Rain1HDTO {
+  const _Rain1HDTO({@JsonKey(name: '1h') this.anHour});
+  factory _Rain1HDTO.fromJson(Map<String, dynamic> json) =>
+      _$Rain1HDTOFromJson(json);
+
+  @override
+  @JsonKey(name: '1h')
+  final double? anHour;
+
+  /// Create a copy of Rain1HDTO
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$Rain1HDTOCopyWith<_Rain1HDTO> get copyWith =>
+      __$Rain1HDTOCopyWithImpl<_Rain1HDTO>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$Rain1HDTOToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Rain1HDTO &&
+            (identical(other.anHour, anHour) || other.anHour == anHour));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, anHour);
+
+  @override
+  String toString() {
+    return 'Rain1HDTO(anHour: $anHour)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$Rain1HDTOCopyWith<$Res>
+    implements $Rain1HDTOCopyWith<$Res> {
+  factory _$Rain1HDTOCopyWith(
+          _Rain1HDTO value, $Res Function(_Rain1HDTO) _then) =
+      __$Rain1HDTOCopyWithImpl;
+  @override
+  @useResult
+  $Res call({@JsonKey(name: '1h') double? anHour});
+}
+
+/// @nodoc
+class __$Rain1HDTOCopyWithImpl<$Res> implements _$Rain1HDTOCopyWith<$Res> {
+  __$Rain1HDTOCopyWithImpl(this._self, this._then);
+
+  final _Rain1HDTO _self;
+  final $Res Function(_Rain1HDTO) _then;
+
+  /// Create a copy of Rain1HDTO
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? anHour = freezed,
+  }) {
+    return _then(_Rain1HDTO(
+      anHour: freezed == anHour
+          ? _self.anHour
+          : anHour // ignore: cast_nullable_to_non_nullable
+              as double?,
     ));
   }
 }
